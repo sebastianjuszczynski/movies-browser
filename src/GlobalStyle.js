@@ -10,5 +10,6 @@ export const GlobalStyle = createGlobalStyle`
     };
     body {
         background: ${({ theme }) => theme.colors.Mercury};
+        font-family: "Poppins", sans-serif;
     };
 `;
