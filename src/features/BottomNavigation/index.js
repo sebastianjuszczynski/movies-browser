@@ -24,12 +24,12 @@ const BottomNavigation = () => {
                 Page <Number>{activePage}</Number> of <Number>{numberPages}</Number>
             </PageCounter>
             <Button
-                disabled={activePage === 500}
+                disabled={activePage === numberPages}
                 onClick={() => dispatch(setActivePage(activePage + 1))}
             >{"Next >"}
             </Button>
             <Button
-                disabled={activePage === 500}
+                disabled={activePage === numberPages}
                 onClick={() => dispatch(setActivePage(500))}
             >{"Last >"}
             </Button>
