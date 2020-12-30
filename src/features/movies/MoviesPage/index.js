@@ -5,22 +5,21 @@ import MovieTile from "../../MovieTile";
 import Loading from "../../../common/Loading";
 import { MoviesContainer } from "./styled";
 import {
-    fetchPopularMovies,
+    setActivePage,
     selectPopularMovies,
     selectLoading,
-    selectActivePage,
 } from "./moviesSlice";
 import Header from "../../../common/Header/Header";
 
 const MoviesPage = () => {
+    useEffect(() => {
+        dispatch(setActivePage(1))
+    }, []);
     const popularMovies = useSelector(selectPopularMovies);
     const isLoading = useSelector(selectLoading);
-    const activePage = useSelector(selectActivePage);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(fetchPopularMovies());
-    }, [activePage])
+ 
 
     return (
         <>
