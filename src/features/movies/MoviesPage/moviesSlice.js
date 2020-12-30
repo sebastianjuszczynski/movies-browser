@@ -8,11 +8,9 @@ const moviesSlice = createSlice({
         numberPages: undefined,
     },
     reducers: {
-        fetchPopularMovies: state => {
-            state.loading = true;
-        },
+        
         fetchPopularMoviesSuccess: (state, { payload: popularMovies }) => {
-            state.popularMovies = popularMovies.results;;
+            state.popularMovies = popularMovies.results;
             state.numberPages = popularMovies.total_pages;
             state.loading = false;
         },
@@ -21,6 +19,7 @@ const moviesSlice = createSlice({
         },
         setActivePage: (state, { payload: pageNumber }) => {
             state.activePage = pageNumber;
+            state.loading = true;
         },
     },
 });
