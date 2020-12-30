@@ -22,12 +22,15 @@ const MoviesPage = () => {
 
     return (
         <>
-            {isLoading ? "loading" : (
-                <MoviesContainer>
-                    {popularMovies.map(movie =>
-                        <MovieTile key={movie.id}>{movie.title}</MovieTile>)}
+            {isLoading ? "loading..." : (
+                <>
+                    <MoviesContainer>
+                        {popularMovies.map(movie =>
+                            <MovieTile key={movie.id} movieInfo={movie}>{movie.title}</MovieTile>)}
+
+                    </MoviesContainer>
                     <BottomNavigation />
-                </MoviesContainer>
+                </>
             )
             }
         </>
