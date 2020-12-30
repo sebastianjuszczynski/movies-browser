@@ -34,6 +34,6 @@ export const {
 export const selectPopularMovies = state => state.movies.popularMovies;
 export const selectLoading = state => state.movies.loading;
 export const selectActivePage = state => state.movies.activePage;
-export const selectNumberPages = state => state.movies.nuberPages;
+export const selectNumberPages = state => state.movies.numberPages;
 
 export default moviesSlice.reducer;
