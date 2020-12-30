@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BottomNavigation from "../../BottomNavigation";
 import MovieTile from "../../MovieTile";
+import Loading from "../../../common/Loading";
 import { MoviesContainer } from "./styled";
 import {
     fetchPopularMovies,
@@ -22,7 +23,7 @@ const MoviesPage = () => {
 
     return (
         <>
-            {isLoading ? "loading..." : (
+            {isLoading ? <Loading/> : (
                 <>
                     <MoviesContainer>
                         {popularMovies.map(movie =>
