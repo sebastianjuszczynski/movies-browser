@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/movie-browser/static/js/main.eba2f2d5.chunk.js",
-    "main.js.map": "/movie-browser/static/js/main.eba2f2d5.chunk.js.map",
+    "main.js": "/movie-browser/static/js/main.ecd832c3.chunk.js",
+    "main.js.map": "/movie-browser/static/js/main.ecd832c3.chunk.js.map",
     "runtime-main.js": "/movie-browser/static/js/runtime-main.7fcd4686.js",
     "runtime-main.js.map": "/movie-browser/static/js/runtime-main.7fcd4686.js.map",
-    "static/js/2.e0785e68.chunk.js": "/movie-browser/static/js/2.e0785e68.chunk.js",
-    "static/js/2.e0785e68.chunk.js.map": "/movie-browser/static/js/2.e0785e68.chunk.js.map",
+    "static/js/2.088484b1.chunk.js": "/movie-browser/static/js/2.088484b1.chunk.js",
+    "static/js/2.088484b1.chunk.js.map": "/movie-browser/static/js/2.088484b1.chunk.js.map",
     "static/js/3.7f688ad0.chunk.js": "/movie-browser/static/js/3.7f688ad0.chunk.js",
     "static/js/3.7f688ad0.chunk.js.map": "/movie-browser/static/js/3.7f688ad0.chunk.js.map",
     "index.html": "/movie-browser/index.html",
-    "static/js/2.e0785e68.chunk.js.LICENSE.txt": "/movie-browser/static/js/2.e0785e68.chunk.js.LICENSE.txt"
+    "static/js/2.088484b1.chunk.js.LICENSE.txt": "/movie-browser/static/js/2.088484b1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7fcd4686.js",
-    "static/js/2.e0785e68.chunk.js",
-    "static/js/main.eba2f2d5.chunk.js"
+    "static/js/2.088484b1.chunk.js",
+    "static/js/main.ecd832c3.chunk.js"
   ]
 }
