@@ -1,36 +1,49 @@
 import React from "react";
-import { HashRouter, Switch, Route, Redirect, NavLink } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import {
   WidthContainer,
   NavContainer,
+  NavContainerRight,
   List,
   ListItem,
   Nav,
   StyledNavLink,
   Title,
+  Input,
+  InputBox,
+  StyledInputIcon,
 } from "./styled";
 import MoviesPage from "./features/movies/MoviesPage";
 import PeoplePage from "./features/people/PersonPage";
 import { ReactComponent as TitleLogo } from "./assets/camera-logo.svg";
 
+
 function App() {
   return (
     <HashRouter>
-      <nav>
+      <main>
         <Nav>
           <WidthContainer>
             <NavContainer>
-              <Title>
-                <TitleLogo /> Movie Browser
+              <NavContainer>
+                <Title>
+                  <TitleLogo /> Movie Browser
               </Title>
-              <List>
-                <ListItem>
-                  <StyledNavLink to="/movies">Movies</StyledNavLink>
-                </ListItem>
-                <ListItem>
-                  <StyledNavLink to="/people">People</StyledNavLink>
-                </ListItem>
-              </List>
+                <List>
+                  <ListItem>
+                    <StyledNavLink to="/movies">Movies</StyledNavLink>
+                  </ListItem>
+                  <ListItem>
+                    <StyledNavLink to="/people">People</StyledNavLink>
+                  </ListItem>
+                </List>
+              </NavContainer>
+              <NavContainerRight>
+                <InputBox>
+                  <Input placeholder="Search for movies..." />
+                  <StyledInputIcon />
+                </InputBox>
+              </NavContainerRight>
             </NavContainer>
           </WidthContainer>
         </Nav>
@@ -45,7 +58,7 @@ function App() {
             <Redirect to="/movies" />
           </Route>
         </Switch>
-      </nav>
+      </main>
     </HashRouter>
   );
 }
