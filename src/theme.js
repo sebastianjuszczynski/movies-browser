@@ -1,6 +1,6 @@
 export const theme = {
     colors: {
-        mercury: "#E5E5E5",
+        mercury: "#F5F5FA",
         black: "#000000",
         waterLoo: "#7E839A",
         tan: "#F5F5FA",
