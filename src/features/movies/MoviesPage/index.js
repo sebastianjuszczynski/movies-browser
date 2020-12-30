@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BottomNavigation from "../../BottomNavigation";
+import MovieTile from "../../MovieTile";
+import { MoviesContainer } from "./styled";
 import {
     fetchPopularMovies,
     selectPopularMovies,
@@ -21,11 +23,11 @@ const MoviesPage = () => {
     return (
         <>
             {isLoading ? "loading" : (
-                <div>
+                <MoviesContainer>
                     {popularMovies.map(movie =>
-                        <p key={movie.id}>{movie.title}</p>)}
+                        <MovieTile key={movie.id}>{movie.title}</MovieTile>)}
                     <BottomNavigation />
-                </div>
+                </MoviesContainer>
             )
             }
         </>
