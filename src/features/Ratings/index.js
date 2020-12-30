@@ -2,13 +2,19 @@ import React from "react";
 import { Container, Star, Rate, Votes } from "./styled";
 import star from "../../assets/star.svg";
 
-const Ratings = () => {
+const Ratings = ({ voteAverage, voteCount }) => {
     return (
-        <Container>
-            <Star src={star}/>
-            <Rate>7,8</Rate>
-            <Votes>40 votes</Votes>
+        <>
+        {voteCount ? (
+            <Container>
+            <Star src={star} />
+            <Rate>{voteAverage}</Rate>
+            <Votes>{voteCount}</Votes>
         </Container>
+        ) : 
+        <Votes>Not votes yes.</Votes>
+        }
+        </>
     );
 };
 

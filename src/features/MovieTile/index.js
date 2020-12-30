@@ -29,7 +29,10 @@ const MovieTile = ({ movieInfo }) => {
                     }
                     <div >Types</div>
                 </Container>
-                <Ratings />
+                <Ratings
+                    voteAverage={movieInfo.vote_average}
+                    voteCount={movieInfo.vote_count}
+                />
             </DetailsContainer>
         </Tile>
     );
