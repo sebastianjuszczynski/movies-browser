@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import BottomNavigation from "../../BottomNavigation";
 import {
     fetchPopularMovies,
     selectPopularMovies,
     selectLoading,
     selectActivePage,
-    setActivePage
 } from "./moviesSlice";
 
 const MoviesPage = () => {
     const popularMovies = useSelector(selectPopularMovies);
-    const isLoading =useSelector(selectLoading);
+    const isLoading = useSelector(selectLoading);
     const activePage = useSelector(selectActivePage);
     const dispatch = useDispatch();
 
@@ -19,13 +19,16 @@ const MoviesPage = () => {
     }, [activePage])
 
     return (
-        <div>
-            {isLoading ? "loading" : popularMovies.map(movie => 
-                <p key={movie.id}>{movie.title}</p>)}
-            <button
-                onClick={() => dispatch(setActivePage(activePage + 1))}
-            />
-        </div>
+        <>
+            {isLoading ? "loading" : (
+                <div>
+                    {popularMovies.map(movie =>
+                        <p key={movie.id}>{movie.title}</p>)}
+                    <BottomNavigation />
+                </div>
+            )
+            }
+        </>
     );
 };
 
