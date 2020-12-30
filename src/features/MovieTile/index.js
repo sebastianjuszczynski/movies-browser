@@ -1,11 +1,12 @@
 import React from "react";
+import Ratings from "../Ratings";
 import {
     Tile,
     Image,
     Title,
     Year,
     DetailsContainer,
-    Container
+    Container,
 } from "./styled";
 import noPosterImage from "./../../assets/noPosterImage.svg"
 
@@ -28,7 +29,7 @@ const MovieTile = ({ movieInfo }) => {
                     }
                     <div >Types</div>
                 </Container>
-                <div >Ratings</div>
+                <Ratings />
             </DetailsContainer>
         </Tile>
     );
