@@ -6,7 +6,7 @@ import {
     fetchPopularMoviesSuccess
 } from "./moviesSlice";
 
-function* fetchExampletasksHandler() {
+function* fetchExampleTasksHandler() {
     try {
         yield delay(1000);
         const popularMovies = yield call(getPopularMovies);
@@ -18,5 +18,5 @@ function* fetchExampletasksHandler() {
 };
 
 export function* watchFetchPopularMovies() {
-    yield takeEvery(fetchPopularMovies.type, fetchExampletasksHandler);
+    yield takeEvery(fetchPopularMovies.type, fetchExampleTasksHandler);
 }
