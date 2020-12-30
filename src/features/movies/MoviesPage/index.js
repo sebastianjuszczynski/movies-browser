@@ -10,6 +10,7 @@ import {
     selectLoading,
     selectActivePage,
 } from "./moviesSlice";
+import Header from "../../../common/Header/Header";
 
 const MoviesPage = () => {
     const popularMovies = useSelector(selectPopularMovies);
@@ -23,7 +24,9 @@ const MoviesPage = () => {
 
     return (
         <>
-            {isLoading ? <Loading/> : (
+            <Header>Popular movies</Header>
+            
+            {isLoading ? <Loading /> : (
                 <>
                     <MoviesContainer>
                         {popularMovies.map(movie =>
