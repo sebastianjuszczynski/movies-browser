@@ -10,10 +10,12 @@ import {
     selectLoading,
 } from "./moviesSlice";
 import Header from "../../../common/Header/Header";
+import { usePageParameter } from "../../pageParameters";
 
 const MoviesPage = () => {
+    const urlPageNumber = usePageParameter("page");
     useEffect(() => {
-        dispatch(setActivePage(1))
+        dispatch(setActivePage(+urlPageNumber || 1))
     }, []);
     const popularMovies = useSelector(selectPopularMovies);
     const isLoading = useSelector(selectLoading);
