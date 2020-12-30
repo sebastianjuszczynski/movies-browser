@@ -1,0 +1,23 @@
+import { useHistory, useLocation } from "react-router-dom";
+
+export const usePageParameter = paramName => {
+    const location = useLocation();
+    return (new URLSearchParams(location.search)).get(paramName);
+};
+
+export const useReplacePageParameter = () => {
+    const history = useHistory();
+    const location = useLocation();
+
+    const searchParams = new URLSearchParams(location.search);
+
+    const replacePageParemeter = ( key, value ) => {
+        if (!value === "") {
+            searchParams.delete(key);
+        } else {
+            searchParams.set(key, value);
+        }
+        history.replace(`${location.pathname}?${searchParams.toString()}`);
+    };
+    return replacePageParemeter;
+}
