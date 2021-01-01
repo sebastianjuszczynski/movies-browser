@@ -17,3 +17,10 @@ export const PersonDetailsContainer = styled(DetailsContainer)`
 export const PersonName = styled(Title)`
     text-align: center;
 `;
+export const Subtitle = styled.p`
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: ${({theme}) => theme.colors.waterloo};
+    margin: 0;
+`;
