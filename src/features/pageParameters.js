@@ -17,7 +17,7 @@ export const useReplacePageParameter = () => {
         } else {
             searchParams.set(key, value);
         }
-        history.replace(`${location.pathname}?${searchParams.toString()}`);
+        history.push(`${location.pathname}?${searchParams.toString()}`);
     };
     return replacePageParemeter;
 }
