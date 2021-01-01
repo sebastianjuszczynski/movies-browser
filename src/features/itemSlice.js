@@ -16,7 +16,7 @@ const itemSlice = createSlice({
             state.loading = true;
             state.itemId = id;
         },
-        fetchItemSuccess: (state, { payload: itemData, extraData }) => {
+        fetchItemSuccess: (state, { payload: { itemData, extraData } }) => {
             state.itemData = itemData;
             state.extraData = extraData;
             state.loading = false;
@@ -24,7 +24,7 @@ const itemSlice = createSlice({
         fetchItemError: state => {
             state.loading = false;
         },
-        setActivePath: (state, { payload: {path1, path2} }) => {
+        setActivePath: (state, { payload: { path1, path2 } }) => {
             state.activeItemPath = path1;
             state.activeExtraPath = path2;
         },
