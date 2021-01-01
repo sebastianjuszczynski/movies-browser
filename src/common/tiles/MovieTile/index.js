@@ -1,18 +1,18 @@
 import React from "react";
 import Ratings from "./../../Ratings";
 import {
-    Wrapper,
+    MovieWrapper,
     Image,
     Title,
     Year,
     DetailsContainer,
     Container,
 } from "./styled";
-import noPosterImage from "./../../../assets/noPosterImage.svg"
+import noPosterImage from "./../../../assets/noPosterImage.svg";
 
 const MovieTile = ({ movieInfo }) => {
     return (
-        <Wrapper  to={`/movies/movie/${movieInfo.id}`}>
+        <MovieWrapper  to={`/movies/movie/${movieInfo.id}`}>
             <Image src={movieInfo.poster_path
                 ? `https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`
                 : noPosterImage
@@ -34,7 +34,7 @@ const MovieTile = ({ movieInfo }) => {
                     voteCount={movieInfo.vote_count}
                 />
             </DetailsContainer>
-        </Wrapper>
+        </MovieWrapper>
     );
 }
 export default MovieTile;
