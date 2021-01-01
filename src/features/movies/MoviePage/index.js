@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Loading from "../../../common/Loading";
-import { selectLoading, selectMovieData, setMovie } from ".movieSlice";
+import { selectLoading, selectMovieData, setMovie } from "./movieSlice";
 
 const MoviePage = () => {
     const { id } = useParams();
@@ -16,7 +16,7 @@ const MoviePage = () => {
 
     return (
         <>
-        {loadinn ? <Loading /> : <>
+        {loading ? <Loading /> : <>
             <div>{movieData.title}</div>
             <div>tile</div>    
             <div>cast</div>    

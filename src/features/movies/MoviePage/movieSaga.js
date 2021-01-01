@@ -11,7 +11,7 @@ function* fetchMovieHandler() {
     const id = store.getState().movies.movieId;
     try {
         yield delay(500);
-        const movieData = yield call() =>
+        const movieData = yield call();
         getApiData(`https://api.themoviedb.org/3/movie/${id}?api_key=db28f87903ed5f61125cde9d85f339b2&language=en-US`);
         yield put(fetchMovieSuccess(movieData));
     } catch (error) {
