@@ -6,15 +6,15 @@ import Loading from "../../../common/Loading";
 import { MoviesContainer } from "./styled";
 import {
     setActivePage,
-    selectPopularMovies,
+    selectList,
     selectLoading,
-} from "./moviesSlice";
+} from "../../listSlice";
 import Header from "../../../common/Header/Header";
 import { usePageParameter } from "../../pageParameters";
 
 const MoviesPage = () => {
     const urlPageNumber = +usePageParameter("page");
-    const popularMovies = useSelector(selectPopularMovies);
+    const popularMovies = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
     const dispatch = useDispatch();
 

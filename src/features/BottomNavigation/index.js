@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectActivePage, setActivePage, selectNumberPages } from "../movies/MoviesPage/moviesSlice";
+import { selectActivePage, setActivePage, selectNumberPages } from "../listSlice";
 import { useReplacePageParameter } from "../pageParameters";
 import { Container, Button, PageCounter, Number } from "./styled";
 
