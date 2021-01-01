@@ -25,6 +25,10 @@ export const NavContainer = styled.div`
     padding: 0 10px;
     flex-wrap: wrap;
     margin: 0 auto;
+
+    @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    min-height: 71px;
+  }
 `;
 
 export const NavContainerLeft = styled(NavContainer)`
@@ -32,6 +36,7 @@ export const NavContainerLeft = styled(NavContainer)`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     flex-basis: 100%;
+    justify-content: space-around;
   }
 `;
 
