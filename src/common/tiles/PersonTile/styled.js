@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Tile, Image, DetailsContainer, Title} from "./../tileStyles";
+import { Tile, Image, DetailsContainer, Title } from "../MovieTile/styled";
 
 export const PersonTile = styled(Tile)`
     width: 208px;

@@ -9,7 +9,7 @@ import {
     setActivePath,
 } from "../../listSlice";
 import { PeopleContainer } from "./styled";
-import Header from "./../../../common/Header";
+import Header from "./../../../common/Header/Header";
 import { usePageParameter } from "../../pageParameters";
 import PersonTile from "./../../../common/tiles/PersonTile";
 
@@ -35,9 +35,9 @@ const PeoplePage = () => {
         ? <Loading /> : (
             <>
                 <PeopleContainer>
-                    {popularPeople.map(person => <PersonTile personInfo={person}/>)}
+                    {popularPeople.map(person => <PersonTile personInfo={person} key={person.id}/>)}
                 </PeopleContainer>
-                <BottomNavbar />
+                <BottomNavigation />
             </>
         )}
         </>
