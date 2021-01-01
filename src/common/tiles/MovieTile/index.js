@@ -1,7 +1,7 @@
 import React from "react";
 import Ratings from "./../../Ratings";
 import {
-    Tile,
+    Wrapper,
     Image,
     Title,
     Year,
@@ -12,7 +12,7 @@ import noPosterImage from "./../../../assets/noPosterImage.svg"
 
 const MovieTile = ({ movieInfo }) => {
     return (
-        <Tile  to={`/movies/movie/${movieInfo.id}`}>
+        <Wrapper  to={`/movies/movie/${movieInfo.id}`}>
             <Image src={movieInfo.poster_path
                 ? `https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`
                 : noPosterImage
@@ -34,7 +34,7 @@ const MovieTile = ({ movieInfo }) => {
                     voteCount={movieInfo.vote_count}
                 />
             </DetailsContainer>
-        </Tile>
+        </Wrapper>
     );
 }
 export default MovieTile;

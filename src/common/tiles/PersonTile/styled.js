@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Tile, Image, DetailsContainer, Title } from "../MovieTile/styled";
+import { Wrapper, Image, DetailsContainer, Title } from "../MovieTile/styled";
 
-export const PersonTile = styled(Tile)`
+export const PersonWrapper = styled(Wrapper)`
     width: 208px;
     height: 339px;
 `;
