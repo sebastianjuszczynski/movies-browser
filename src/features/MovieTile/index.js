@@ -12,7 +12,7 @@ import noPosterImage from "./../../assets/noPosterImage.svg"
 
 const MovieTile = ({ movieInfo }) => {
     return (
-        <Tile>
+        <Tile  to={`/movies/movie/${movieInfo.id}`}>
             <Image src={movieInfo.poster_path
                 ? `https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`
                 : noPosterImage

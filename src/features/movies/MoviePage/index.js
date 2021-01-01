@@ -7,22 +7,25 @@ import { selectLoading, selectMovieData, setMovie } from "./movieSlice";
 const MoviePage = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const movieData = useSelector();
+    const movieData = useSelector(selectMovieData);
     const loading = useSelector(selectLoading);
 
     useEffect(() => {
         dispatch(setMovie(id));
     }, [id]);
+    console.log(movieData)
 
     return (
         <>
-        {loading ? <Loading /> : <>
-            <div>{movieData.title}</div>
-            <div>tile</div>    
-            <div>cast</div>    
-            <div>crew</div>    
-            </>
-        }
+            {loading ? <Loading /> :
+                <>
+                    <div>{movieData.title}</div>
+                    <div>tile</div>
+                    <div>cast</div>
+                    <div>crew</div>
+                    
+                </>
+            }
         </>
     );
 };
