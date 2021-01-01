@@ -7,6 +7,7 @@ import {
     selectLoading,
     setActivePage,
     setActivePath,
+    resetState
 } from "../../listSlice";
 import { PeopleContainer } from "./styled";
 import Header from "./../../../common/Header/Header";
@@ -18,6 +19,9 @@ const PeoplePage = () => {
 
     useEffect(() => {
         dispatch(setActivePath("popularPeople"));
+        return () => {
+            dispatch(resetState());
+        };
     }, []);
 
     const urlPageNumber = +usePageParameter("page");
@@ -30,16 +34,16 @@ const PeoplePage = () => {
 
     return (
         <>
-        <Header>Popular People</Header>
-        {isLoading
-        ? <Loading /> : (
-            <>
-                <PeopleContainer>
-                    {popularPeople.map(person => <PersonTile personInfo={person} key={person.id}/>)}
-                </PeopleContainer>
-                <BottomNavigation />
-            </>
-        )}
+            <Header>Popular People</Header>
+            {isLoading
+                ? <Loading /> : (
+                    <>
+                        <PeopleContainer>
+                            {popularPeople.map(person => <PersonTile personInfo={person} key={person.id} />)}
+                        </PeopleContainer>
+                        <BottomNavigation />
+                    </>
+                )}
         </>
     );
 };

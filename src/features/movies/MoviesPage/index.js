@@ -9,6 +9,7 @@ import {
     selectList,
     selectLoading,
     setActivePath,
+    resetState,
 } from "../../listSlice";
 import Header from "../../../common/Header/Header";
 import { usePageParameter } from "../../pageParameters";
@@ -18,9 +19,12 @@ const MoviesPage = () => {
     const popularMovies = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         dispatch(setActivePath("popularMovies"));
+        return () => {
+            dispatch(resetState());
+        };
     }, []);
 
     useEffect(() => {
@@ -30,7 +34,7 @@ const MoviesPage = () => {
     return (
         <>
             <Header>Popular movies</Header>
-            
+
             {isLoading ? <Loading /> : (
                 <>
                     <TileContainer>
