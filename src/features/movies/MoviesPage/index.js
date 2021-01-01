@@ -8,6 +8,7 @@ import {
     setActivePage,
     selectList,
     selectLoading,
+    setActivePath,
 } from "../../listSlice";
 import Header from "../../../common/Header/Header";
 import { usePageParameter } from "../../pageParameters";
@@ -17,6 +18,10 @@ const MoviesPage = () => {
     const popularMovies = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
     const dispatch = useDispatch();
+    
+    useEffect(() => {
+        dispatch(setActivePath("popularMovies"));
+    }, []);
 
     useEffect(() => {
         dispatch(setActivePage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber))
