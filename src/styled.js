@@ -22,7 +22,14 @@ export const NavContainer = styled.div`
     align-items: center;
     min-height: inherit;
     padding: 0 10px;
+    flex-wrap: wrap;
+    margin: 0 auto;
 `;
+
+export const NavContainerLeft = styled(NavContainer)`
+  flex-wrap: nowrap;
+`;
+
 export const NavContainerRight = styled(NavContainer)`
     justify-content: flex-end;
 `;
@@ -58,6 +65,10 @@ export const Title = styled.p`
     padding-left: 16px;
     color: ${({ theme }) => theme.colors.white};
     font-size: 24px;
+    
+    @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    font-size: 13px;
+  }
 `;
 export const Input = styled.input`
     width: 432px;

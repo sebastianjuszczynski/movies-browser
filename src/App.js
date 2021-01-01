@@ -4,6 +4,7 @@ import {
   WidthContainer,
   NavContainer,
   NavContainerRight,
+  NavContainerLeft,
   List,
   ListItem,
   Nav,
@@ -26,7 +27,7 @@ function App() {
         <Nav>
           <WidthContainer>
             <NavContainer>
-              <NavContainer>
+              <NavContainerLeft>
                 <Title>
                   <TitleLogo /> Movie Browser
               </Title>
@@ -38,7 +39,7 @@ function App() {
                     <StyledNavLink to="/people">People</StyledNavLink>
                   </ListItem>
                 </List>
-              </NavContainer>
+              </NavContainerLeft>
               <NavContainerRight>
                 <InputBox>
                   <Input placeholder="Search for movies..." />
