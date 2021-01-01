@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import BottomNavigation from "../../BottomNavigation";
 import MovieTile from "../../../common/tiles/MovieTile";
 import Loading from "../../../common/Loading";
-import { MoviesContainer } from "./styled";
+import { TileContainer } from "./../../../common/tiles/TileContainer";
 import {
     setActivePage,
     selectList,
@@ -33,11 +33,11 @@ const MoviesPage = () => {
             
             {isLoading ? <Loading /> : (
                 <>
-                    <MoviesContainer>
+                    <TileContainer>
                         {popularMovies.map(movie =>
                             <MovieTile key={movie.id} movieInfo={movie}>{movie.title}</MovieTile>)}
 
-                    </MoviesContainer>
+                    </TileContainer>
                     <BottomNavigation />
                 </>
             )

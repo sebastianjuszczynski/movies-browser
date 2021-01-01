@@ -6,8 +6,10 @@ export const PersonTile = styled(Tile)`
     height: 339px;
 `;
 export const PersonImage = styled(Image)`
-    width: 177px;
-    height: 264px;
+    width: 176px;
+    height: 231px;
+    object-fit: cover;
+    object-position: top;
 `;
 export const PersonDetailsContainer = styled(DetailsContainer)`
     grid-template-columns: repeat(6, 1fr);

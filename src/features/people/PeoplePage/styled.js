@@ -1,9 +1,6 @@
 import styled from "styled-components";
+import { TileContainer } from "./../../../common/tiles/TileContainer";
 
-export const PeopleContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat()(6, 1fr);
-    grid-gap: 24px;
-    width: 1368px;
-    margin: 24px auto 40px;
-`
+export const PeopleContainer = styled(TileContainer)`
+    grid-template-columns: repeat(6, 1fr);
+`;
