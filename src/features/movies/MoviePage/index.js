@@ -13,6 +13,7 @@ import language from "./../../../common/language";
 import apiKey from "./../../../common/apiKey";
 import { PeopleContainer } from "../../../common/tiles/TileContainer";
 import PersonTile from "../../../common/tiles/PersonTile";
+import Header from "../../../common/Header/Header";
 
 const MoviePage = () => {
     const { id } = useParams();
@@ -35,15 +36,27 @@ const MoviePage = () => {
         <>
             {loading ? <Loading /> :
                 <>
-                    <div>{movieData.title}</div>
-                    <div>tile</div>
+                    <Header as="h2">Cast</Header>
                     <PeopleContainer>
-                        {castCrewData.cast.map(({ profile_path, id, character }) =>
+                        {castCrewData.cast.slice(0, 10).map(({ profile_path, id, character, name }) =>
                             <PersonTile
                                 key={id}
                                 profile_path={profile_path}
                                 id={id}
-                                name={character}
+                                name={name}
+                                subtitle={character}
+                            />
+                        )}
+                    </PeopleContainer>
+                    <Header as="h2">Crew</Header>
+                    <PeopleContainer>
+                        {castCrewData.crew.slice(0, 10).map(({ profile_path, id, job, name, credit_id }) =>
+                            <PersonTile
+                                key={credit_id}
+                                profile_path={profile_path}
+                                id={id}
+                                name={name}
+                                subtitle={job}
                             />
                         )}
                     </PeopleContainer>
