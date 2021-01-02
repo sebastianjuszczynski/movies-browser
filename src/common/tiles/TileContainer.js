@@ -8,9 +8,16 @@ export const MoviesContainer = styled.div`
     grid-gap: 24px;
     justify-content: center;
 
-    @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+      width: 100%;
+      grid-template-columns: unset;
+      grid-gap: 20px;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     width: 100%;
     grid-gap: 16px;
+    grid-template-columns: unset;
   }
 `;
 export const PeopleContainer = styled(MoviesContainer)`
