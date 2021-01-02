@@ -56,7 +56,8 @@ const PersonPage = () => {
                                 vote_average,
                                 vote_count,
                                 character,
-                                credit_id
+                                credit_id,
+                                genre_ids,
                             }) => (
                                 <MovieTile
                                     key={credit_id}
@@ -67,6 +68,7 @@ const PersonPage = () => {
                                     vote_average={vote_average}
                                     vote_count={vote_count}
                                     role={character}
+                                    genre_ids={genre_ids}
                                 />
                             ))}
                     </MoviesContainer>
@@ -83,6 +85,7 @@ const PersonPage = () => {
                                 vote_count,
                                 job,
                                 credit_id,
+                                genre_ids,
                             }) => (
                                 <MovieTile
                                     key={credit_id}
@@ -93,6 +96,7 @@ const PersonPage = () => {
                                     vote_average={vote_average}
                                     vote_count={vote_count}
                                     role={job}
+                                    genre_ids={genre_ids}
                                 />
                             ))}
                     </MoviesContainer>
