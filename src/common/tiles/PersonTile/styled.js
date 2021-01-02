@@ -3,7 +3,7 @@ import { Wrapper, Image, DetailsContainer, Title } from "../MovieTile/styled";
 
 export const PersonWrapper = styled(Wrapper)`
     width: 208px;
-    height: 339px;
+    min-height: 339px;
 `;
 export const PersonImage = styled(Image)`
     width: 176px;
