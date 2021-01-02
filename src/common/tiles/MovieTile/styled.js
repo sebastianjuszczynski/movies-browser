@@ -40,9 +40,9 @@ export const Container = styled.div`
     grid-gap: 8px;
 `;
 export const Title = styled.div`
-    font-weight: 500;
-    font-size: 22px;
     line-height: 1.3;
+    font-weight: 500;
+    font-size: ${({ textLength}) => (textLength > 40) ? "18px" : "22px"};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 16px;

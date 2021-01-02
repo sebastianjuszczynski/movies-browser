@@ -20,7 +20,7 @@ const MovieTile = ({ id, poster_path, title, release_date, vote_average, vote_co
             <DetailsContainer>
                 <Container>
                     {title &&
-                        <Title> {title}
+                        <Title textLength={title.length}> {title}
                         </Title>
                     }
                     {release_date &&
