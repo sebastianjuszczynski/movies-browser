@@ -12,9 +12,10 @@ export const Nav = styled.nav`
     color: ${({ theme }) => theme.colors.white};
 `;
 export const WidthContainer = styled.div`
-    max-width: 1368px;
+    max-width: 1400px;
     min-height: 100%;
     margin: 0 auto;
+    padding: 16px;
 `;
 export const NavContainer = styled.div`
     display: flex;
