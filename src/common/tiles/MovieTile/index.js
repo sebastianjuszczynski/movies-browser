@@ -24,7 +24,7 @@ const MovieTile = ({ id, poster_path, title, release_date, vote_average, vote_co
                         </Title>
                     }
                     {release_date &&
-                        <Year> {(release_date).slice(0, 4)}
+                        <Year> {release_date.slice(0, 4)}
                         </Year>
                     }
                     <div>Types</div>
