@@ -9,8 +9,9 @@ import {
     Container,
 } from "./styled";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
+import Types from "./../Types";
 
-const MovieTile = ({ id, poster_path, title, release_date, vote_average, vote_count, role }) => {
+const MovieTile = ({ id, poster_path, title, release_date, vote_average, vote_count, role, genre_ids }) => {
     return (
         <MovieWrapper  to={`/movies/movie/${id}`}>
             <Image src={poster_path
@@ -31,7 +32,7 @@ const MovieTile = ({ id, poster_path, title, release_date, vote_average, vote_co
                                     }
                                   </Year>
                     )}
-                    <div>Types</div>
+                    <Types genre_ids={genre_ids} />
                 </Container>
                 <Ratings
                     voteAverage={vote_average}

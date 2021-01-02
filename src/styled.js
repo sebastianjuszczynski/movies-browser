@@ -20,7 +20,7 @@ export const WidthContainer = styled.div`
 export const NavContainer = styled.div`
     display: flex;
     flex-basis: 50%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     min-height: inherit;
     padding: 0 10px;
