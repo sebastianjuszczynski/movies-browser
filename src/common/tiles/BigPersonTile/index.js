@@ -1,30 +1,30 @@
 import React from "react";
 import {
-    BigPersonWrapper,
-    PersonImage,
-    PersonName,
-    BigPersonDetailsContainer,
+    BigTileWrapper,
+    BigTileImage,
+    BigTileHeader,
+    BigDetailsContainer,
     Detail,
     MarkedDetail,
     Description,
-    BirthDetails,
+    DetailsWrapper,
 } from "./styled";
 import noProfileImage from "./../../../assets/noProfileImage.svg";
 
 const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography }) => {
 
     return (
-        <BigPersonWrapper as="div">
-            <PersonImage
+        <BigTileWrapper as="div">
+            <BigTileImage
                 src={profile_path
                     ? `https://image.tmdb.org/t/p/h632${profile_path}`
                     : noProfileImage
                 }
                 alt={`Picture of ${name}`}
             />
-            <BigPersonDetailsContainer>
-                {name && <PersonName>{name}</PersonName>}
-                <BirthDetails>
+            <BigDetailsContainer>
+                {name && <BigTileHeader>{name}</BigTileHeader>}
+                <DetailsWrapper>
                     {birthday && 
                     <Detail> 
                         <MarkedDetail>Date of birth: </MarkedDetail>    {birthday}
@@ -33,10 +33,10 @@ const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography
                     <Detail>
                         <MarkedDetail>Place of birth: </MarkedDetail> {place_of_birth}
                     </Detail>}
-                    </BirthDetails>
+                    </DetailsWrapper>
                 {biography && <Description>{biography}</Description>}
-            </BigPersonDetailsContainer>
-        </BigPersonWrapper>
+            </BigDetailsContainer>
+        </BigTileWrapper>
     );
 };
 

@@ -1,24 +1,26 @@
 import styled from "styled-components";
-import { Wrapper, DetailsContainer} from "../MovieTile/styled";
+import { Wrapper } from "../MovieTile/styled";
 
-export const BigPersonWrapper = styled(Wrapper)`
+export const BigTileWrapper = styled(Wrapper)`
     flex-direction: row;
     width: 100%;
     padding: 40px;
     margin: 56px auto 64px;
 `;
-export const PersonImage = styled.img`
+export const BigTileImage = styled.img`
     width: 399px;
     height: 564px;
 `;
-export const PersonName = styled.div`
+export const BigTileHeader = styled.div`
     font-weight: 600;
     font-size: 36px;
     line-height: 120%;
 `;
-export const BigPersonDetailsContainer = styled(DetailsContainer)`
+export const BigDetailsContainer = styled.div`
+    display: grid;
+    height: fit-content;
+    grid-gap: 24px;
     margin-left: 40px;
-    justify-content: start;
 `;
 export const Detail = styled.div`
     font-size: 18px;
@@ -31,7 +33,7 @@ export const Description = styled.div`
     font-size: 20px;
     line-height: 160%;
 `;
-export const BirthDetails= styled.div`
+export const DetailsWrapper = styled.div`
     margin: 24px 0px;
     display: grid;
     grid-gap: 8px;
