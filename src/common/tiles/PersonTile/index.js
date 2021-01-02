@@ -20,8 +20,8 @@ const PersonTile = ({ profile_path, id, name, subtitle = "" }) => {
             />
             <PersonDetailsContainer>
                 <>
-                    {name && <PersonName>{name}</PersonName>}
-                    {subtitle && <Subtitle>{subtitle}</Subtitle>}
+                    {name && <PersonName textLength={name.length}>{name}</PersonName>}
+                    {subtitle && <Subtitle textLength={subtitle.length}>{subtitle}</Subtitle>}
                 </>
 
             </PersonDetailsContainer>
