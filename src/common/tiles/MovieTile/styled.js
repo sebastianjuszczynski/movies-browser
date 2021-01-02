@@ -6,6 +6,7 @@ export const Wrapper = styled(Link)`
     display: flex;
     flex-direction: column;
     width: 324px;
+    height: fit-content;
     padding: 16px;
     background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.woodsmoke};

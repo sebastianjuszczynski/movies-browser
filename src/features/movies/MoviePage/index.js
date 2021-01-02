@@ -14,6 +14,7 @@ import apiKey from "./../../../common/apiKey";
 import { PeopleContainer } from "../../../common/tiles/TileContainer";
 import PersonTile from "../../../common/tiles/PersonTile";
 import Header from "../../../common/Header/Header";
+import BigMovieTile from "../../../common/tiles/BigMovieTile";
 
 const MoviePage = () => {
     const { id } = useParams();
@@ -31,11 +32,21 @@ const MoviePage = () => {
         dispatch(setItemId(id));
     }, [id]);
 
-
+    console.log(movieData)
     return (
         <>
             {loading ? <Loading /> :
                 <>
+                    <BigMovieTile
+                        poster_path={movieData.poster_path}
+                        title={movieData.title}
+                        release_date={movieData.release_date}
+                        vote_average={movieData.vote_average}
+                        vote_count={movieData.vote_count}
+                        genres={movieData.genres}
+                        production_countries={movieData.production_countries}
+                        overview={movieData.overview}
+                    />
                     <Header as="h2">Cast</Header>
                     <PeopleContainer>
                         {castCrewData.cast.slice(0, 10).map(({ profile_path, id, character, name, credit_id }) =>
