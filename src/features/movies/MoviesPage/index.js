@@ -38,8 +38,9 @@ const MoviesPage = () => {
             {isLoading ? <Loading /> : (
                 <>
                     <MoviesContainer>
-                        {popularMovies.map(({ id, poster_path, title, release_date, vote_average, vote_count, credit_id }) => <MovieTile key={id}
-                            key={credit_id}
+                        {popularMovies.map(({ id, poster_path, title, release_date, vote_average, vote_count }) => <MovieTile 
+                            key={id}
+                            id={id}
                             poster_path={poster_path}
                             title={title}
                             release_date={release_date}

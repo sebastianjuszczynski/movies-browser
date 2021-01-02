@@ -39,12 +39,11 @@ const PersonPage = () => {
                 <>
                     <BigPersonTile
                         profile_path={personData.profile_path}
-                        name={personData.profile_path}
+                        name={personData.name}
                         birthday={personData.birthday}
                         place_of_birth={personData.place_of_birth}
                         biography={personData.biography}
                     />
-                    <Header as="h2">Cast</Header>
                     <Header as="h2">Cast</Header>
                     <MoviesContainer>
                         {castCrewData.cast
@@ -60,7 +59,7 @@ const PersonPage = () => {
                                 credit_id
                             }) => (
                                 <MovieTile
-                                key={credit_id}
+                                    key={credit_id}
                                     poster_path={poster_path}
                                     id={id}
                                     title={title}

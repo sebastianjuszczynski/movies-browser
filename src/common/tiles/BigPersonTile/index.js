@@ -8,6 +8,7 @@ import {
 import noProfileImage from "./../../../assets/noProfileImage.svg";
 
 const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography }) => {
+
     return (
         <BigPersonWrapper as="div">
             <PersonImage
