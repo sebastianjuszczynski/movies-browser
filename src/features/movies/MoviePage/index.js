@@ -38,9 +38,9 @@ const MoviePage = () => {
                 <>
                     <Header as="h2">Cast</Header>
                     <PeopleContainer>
-                        {castCrewData.cast.slice(0, 10).map(({ profile_path, id, character, name }) =>
+                        {castCrewData.cast.slice(0, 10).map(({ profile_path, id, character, name, credit_id }) =>
                             <PersonTile
-                                key={id}
+                                key={credit_id}
                                 profile_path={profile_path}
                                 id={id}
                                 name={name}
