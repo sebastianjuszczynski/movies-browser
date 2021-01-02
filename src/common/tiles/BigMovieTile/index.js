@@ -1,5 +1,5 @@
 import React from "react";
-import Ratings from "../../Ratings";
+import Ratings from "../Ratings";
 import {
     BigTileWrapper,
     BigTileHeader,
@@ -40,7 +40,7 @@ const BigMovieTile = ({
                 <DetailsWrapper>
                     {production_countries &&
                         <Detail>
-                            <MarkedDetail>Production: </MarkedDetail> {production_countries.map(country => `${country.name}`)}
+                            <MarkedDetail>Production: </MarkedDetail> {production_countries.map(country => `${country.name }`)}
                         </Detail>
                     }
                     {release_date &&
