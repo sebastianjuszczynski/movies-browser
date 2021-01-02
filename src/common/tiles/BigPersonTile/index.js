@@ -4,6 +4,10 @@ import {
     PersonImage,
     PersonName,
     BigPersonDetailsContainer,
+    Detail,
+    MarkedDetail,
+    Description,
+    BirthDetails,
 } from "./styled";
 import noProfileImage from "./../../../assets/noProfileImage.svg";
 
@@ -20,9 +24,17 @@ const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography
             />
             <BigPersonDetailsContainer>
                 {name && <PersonName>{name}</PersonName>}
-                {birthday &&  <p>{birthday}</p>}  
-                {place_of_birth && <p>{place_of_birth}</p>}
-                {biography && <p>{biography}</p>}                
+                <BirthDetails>
+                    {birthday && 
+                    <Detail> 
+                        <MarkedDetail>Date of birth: </MarkedDetail>    {birthday}
+                    </Detail>}
+                        {place_of_birth && 
+                    <Detail>
+                        <MarkedDetail>Place of birth: </MarkedDetail> {place_of_birth}
+                    </Detail>}
+                    </BirthDetails>
+                {biography && <Description>{biography}</Description>}
             </BigPersonDetailsContainer>
         </BigPersonWrapper>
     );
