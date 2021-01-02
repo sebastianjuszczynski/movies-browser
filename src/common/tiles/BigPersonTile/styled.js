@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Wrapper, DetailsContainer} from "./../tiles/MovieTile/styled";
+import { Wrapper, DetailsContainer} from "../MovieTile/styled";
 
 export const BigPersonWrapper = styled(Wrapper)`
     flex-direction: row;
