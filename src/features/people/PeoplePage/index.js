@@ -15,41 +15,46 @@ import { usePageParameter } from "../../pageParameters";
 import PersonTile from "./../../../common/tiles/PersonTile";
 import apiKey from "../../../common/apiKey";
 import language from "../../../common/language";
+import NoResult from "../../../common/NoResult";
 
 const PeoplePage = () => {
     const dispatch = useDispatch();
     const urlPageNumber = +usePageParameter("page");
+    const urlQuery = usePageParameter("search");
     const popularPeople = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
 
     useEffect(() => {
-        dispatch(setActivePath(`https://api.themoviedb.org/3/person/popular?api_key=${apiKey}&language=${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`));
+        dispatch(setActivePath(urlQuery
+            ? `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&language=${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
+            : `https://api.themoviedb.org/3/person/popular?api_key=${apiKey}&language=${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
+        );
         return () => {
             dispatch(resetState());
         };
-    }, []);
-
-
-    useEffect(() => {
-        dispatch(setActivePage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber));
-    }, [urlPageNumber])
+    }, [urlPageNumber, urlQuery])
 
     return (
         <>
             <Header>Popular People</Header>
             {isLoading
-                ? <Loading /> : (
-                    <>
-                        <PeopleContainer>
-                            {popularPeople.map(({ profile_path, id, name }) => <PersonTile
-                                    key={id}
-                                    profile_path={profile_path}
-                                    id={id}
-                                    name={name}
-                                />)}
-                        </PeopleContainer>
-                        <BottomNavigation />
-                    </>
+                ? <Loading /> : (!popularPeople.length
+                    ? <NoResult urlQuery={urlQuery} />
+                    : (
+                        <>
+                            <PeopleContainer>
+                                {popularPeople.map(({ profile_path, id, name }) =>
+                                    <PersonTile
+                                        key={id}
+                                        profile_path={profile_path}
+                                        id={id}
+                                        name={name}
+                                    />
+                                )}
+                            </PeopleContainer>
+                            <BottomNavigation />
+                        </>
+                    )
                 )}
         </>
     );
