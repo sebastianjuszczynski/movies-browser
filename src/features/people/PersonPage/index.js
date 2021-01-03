@@ -83,9 +83,9 @@ const PersonPage = () => {
                             ))}
                     </MoviesContainer>
 
-                    <Header as="h2">Cast
+                    <Header as="h2">Crew
                         ({castCrewData.cast
-                            ? `${castCrewData.cast.length}`
+                            ? `${castCrewData.crew.length}`
                             : "0"
                         })
                     </Header>
