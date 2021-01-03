@@ -8,4 +8,4 @@ export const ImageBox = styled.div`
 `;
 export const StyledPaperPlane = styled(paperPlane)`
     text-align: center;
-`
+`;

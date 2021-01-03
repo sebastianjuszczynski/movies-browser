@@ -19,5 +19,6 @@ export const MoviesContainer = styled.div`
   }
 `;
 export const PeopleContainer = styled(MoviesContainer)`
-    grid-template-columns: repeat(auto-fill, 208px);
+    grid-template-columns: repeat(auto-fill, 248px);
+    grid-gap: 32px;
 `;
