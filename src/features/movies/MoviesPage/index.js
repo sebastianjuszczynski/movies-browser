@@ -9,18 +9,21 @@ import {
     selectLoading,
     setActivePath,
     resetState,
+    selectError,
 } from "../../listSlice";
 import Header from "../../../common/Header/Header";
 import { usePageParameter } from "../../pageParameters";
 import apiKey from "../../../common/apiKey";
 import language from "../../../common/language";
-import NoResult from "./../../../common/NoResult"
+import NoResult from "./../../../common/NoResult";
+import Error from "../../../common/Error";
 
 const MoviesPage = () => {
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
     const popularMovies = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
+    const isError = useSelector(selectError);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -38,7 +41,13 @@ const MoviesPage = () => {
         <>
             <Header>Popular movies</Header>
 
-            {isLoading ? <Loading /> : (!popularMovies.length ? <NoResult urlQuery={urlQuery} /> : (
+            {isLoading ? 
+            <Loading /> :
+             isError ? 
+            <Error /> :
+            (!popularMovies.length
+                 ? <NoResult urlQuery={urlQuery} /> 
+                 : (
                 <>
                     <MoviesContainer>
                         {popularMovies.map(({

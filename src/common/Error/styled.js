@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {NavLink} from "react-router-dom";
-import Header from "../Header";
+import Header from "../Header/Header";
 
 export const ErrorContainer = styled.div`
   min-height: 65vh;

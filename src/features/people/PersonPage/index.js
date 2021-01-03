@@ -11,10 +11,12 @@ import {
     selectLoading,
     selectItemData,
     setItemId,
-    selectExtraData
+    selectExtraData,
+    selectError,
 } from "../../itemSlice";
 import language from "./../../../common/language";
 import apiKey from "./../../../common/apiKey";
+import Error from "../../../common/Error";
 
 const PersonPage = () => {
     const { id } = useParams();
@@ -22,6 +24,7 @@ const PersonPage = () => {
     const personData = useSelector(selectItemData);
     const castCrewData = useSelector(selectExtraData);
     const isLoading = useSelector(selectLoading);
+    const isError = useSelector(selectError);
 
     useEffect(() => {
         dispatch(setActivePath({
@@ -33,9 +36,11 @@ const PersonPage = () => {
 
     return (
         <>
-            {isLoading ?
-                <Loading />
-                :
+            {isLoading 
+            ? <Loading />
+                : isError
+                    ? <Error />
+                    :
                 <>
                     <BigPersonTile
                         profile_path={personData.profile_path}
@@ -44,7 +49,12 @@ const PersonPage = () => {
                         place_of_birth={personData.place_of_birth}
                         biography={personData.biography}
                     />
-                    <Header as="h2">Cast</Header>
+                    <Header as="h2">Cast
+                        ({castCrewData.cast
+                            ? `${castCrewData.cast.length}`
+                            : "0"
+                        })
+                    </Header>
                     <MoviesContainer>
                         {castCrewData.cast
                             .slice(0, 10)
@@ -73,7 +83,12 @@ const PersonPage = () => {
                             ))}
                     </MoviesContainer>
 
-                    <Header as="h2">Crew</Header>
+                    <Header as="h2">Cast
+                        ({castCrewData.cast
+                            ? `${castCrewData.cast.length}`
+                            : "0"
+                        })
+                    </Header>
                     <MoviesContainer>
                         {castCrewData.crew
                             .slice(0, 10).map(({

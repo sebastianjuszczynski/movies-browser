@@ -5,7 +5,7 @@ import BottomNavigation from "../../BottomNavigation";
 import {
     selectList,
     selectLoading,
-    setActivePage,
+    selectError,
     setActivePath,
     resetState
 } from "../../listSlice";
@@ -16,6 +16,7 @@ import PersonTile from "./../../../common/tiles/PersonTile";
 import apiKey from "../../../common/apiKey";
 import language from "../../../common/language";
 import NoResult from "../../../common/NoResult";
+import Error from "../../../common/Error";
 
 const PeoplePage = () => {
     const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const PeoplePage = () => {
     const urlQuery = usePageParameter("search");
     const popularPeople = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
+    const isError = useSelector(selectError);
 
     useEffect(() => {
         dispatch(setActivePath(urlQuery
@@ -36,12 +38,15 @@ const PeoplePage = () => {
 
     return (
         <>
-            <Header>Popular People</Header>
             {isLoading
-                ? <Loading /> : (!popularPeople.length
-                    ? <NoResult urlQuery={urlQuery} />
-                    : (
-                        <>
+                ? <Loading />
+                : isError
+                    ? <Error />
+                    : (!popularPeople.length
+                        ? <NoResult urlQuery={urlQuery} />
+                        : (
+                             <>
+                            <Header>Popular People</Header>
                             <PeopleContainer>
                                 {popularPeople.map(({ profile_path, id, name }) =>
                                     <PersonTile

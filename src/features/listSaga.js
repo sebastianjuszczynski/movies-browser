@@ -16,7 +16,6 @@ function* fetchListHandler() {
         yield put(fetchListSuccess(data));
     } catch (error) {
         yield put(fetchListError());
-        yield call(alert, "Something went wrong...");
     }
 };
 

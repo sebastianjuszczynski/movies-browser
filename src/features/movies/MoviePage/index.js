@@ -7,7 +7,8 @@ import {
     selectLoading,
     selectItemData,
     setItemId,
-    selectExtraData
+    selectExtraData,
+    selectError,
 } from "../../itemSlice";
 import language from "./../../../common/language";
 import apiKey from "./../../../common/apiKey";
@@ -15,6 +16,7 @@ import { PeopleContainer } from "../../../common/tiles/TileContainer";
 import PersonTile from "../../../common/tiles/PersonTile";
 import Header from "../../../common/Header/Header";
 import BigMovieTile from "../../../common/tiles/BigMovieTile";
+import Error from "../../../common/Error";
 
 const MoviePage = () => {
     const { id } = useParams();
@@ -22,6 +24,7 @@ const MoviePage = () => {
     const movieData = useSelector(selectItemData);
     const castCrewData = useSelector(selectExtraData);
     const loading = useSelector(selectLoading);
+    const isError = useSelector(selectError);
 
     useEffect(() => {
         dispatch(setActivePath({
@@ -36,6 +39,9 @@ const MoviePage = () => {
     return (
         <>
             {loading ? <Loading /> :
+            isError 
+                ? <Error />
+                : (
                 <>
                     <BigMovieTile
                         poster_path={movieData.poster_path}
@@ -74,7 +80,7 @@ const MoviePage = () => {
                     <div>crew</div>
 
                 </>
-            }
+                )}
         </>
     );
 };
