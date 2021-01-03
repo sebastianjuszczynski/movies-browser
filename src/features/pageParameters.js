@@ -12,7 +12,7 @@ export const useReplacePageParameter = () => {
     const searchParams = new URLSearchParams(location.search);
 
     const replacePageParemeter = ( key, value ) => {
-        if (!value === "") {
+        if (value === "") {
             searchParams.delete(key);
         } else {
             searchParams.set(key, value);
