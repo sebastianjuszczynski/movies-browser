@@ -10,6 +10,7 @@ export const theme = {
         pattensBlue: "#D6E4FF",
         mineShaft: "#333333",
         stormGray: "#74788B",
+        scienceBlue: "#0044CC",
     },
     breakpoints: {
         mobile: "450",
