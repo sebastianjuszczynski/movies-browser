@@ -1,20 +1,19 @@
 import React from "react";
 import Ratings from "../Ratings";
 import {
-    MovieWrapper,
-    Image,
     Title,
     Year,
     DetailsContainer,
     Container,
-} from "./styled";
+} from "../tilesStyles";
+import { MovieWrapper, MovieImage } from "./styled";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
 import Types from "./../Types";
 
 const MovieTile = ({ id, poster_path, title, release_date, vote_average, vote_count, role, genre_ids }) => {
     return (
         <MovieWrapper  to={`/movies/movie/${id}`}>
-            <Image src={poster_path
+            <MovieImage src={poster_path
                 ? `https://image.tmdb.org/t/p/w342${poster_path}`
                 : noPosterImage
             } alt={`Plakat filmu ${title}`} />

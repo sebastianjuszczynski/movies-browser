@@ -1,15 +1,17 @@
 import styled from "styled-components";
-import { Wrapper, Image, DetailsContainer, Title } from "../MovieTile/styled";
+import { Wrapper, Image, DetailsContainer, Title } from "./../tilesStyles";
 
 export const PersonWrapper = styled(Wrapper)`
     width: 208px;
-    min-height: 339px;
+    flex-direction: column;
+    padding: 16px;
 `;
 export const PersonImage = styled(Image)`
     width: 176px;
     height: 231px;
     object-fit: cover;
     object-position: top;
+    margin-bottom: 16px;
 `;
 export const PersonDetailsContainer = styled(DetailsContainer)`
     grid-template-columns: repeat(6, 1fr);

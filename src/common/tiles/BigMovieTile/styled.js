@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { BigTileImage } from "../BigPersonTile/styled";
+import { Image } from "./../tilesStyles";
 
-export const BigMovieImage = styled(BigTileImage)`
+export const BigMovieImage = styled(Image)`
     width: 312px;
     height: 464px;
 `;

@@ -1,14 +1,14 @@
 import React from "react";
 import {
     BigTileWrapper,
-    BigTileImage,
     BigTileHeader,
     BigDetailsContainer,
     Detail,
     MarkedDetail,
     Description,
     DetailsWrapper,
-} from "./styled";
+} from "../bigTilesStyles";
+import { BigTileImage } from "./styled";
 import noProfileImage from "./../../../assets/noProfileImage.svg";
 
 const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography }) => {

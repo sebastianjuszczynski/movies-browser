@@ -8,7 +8,7 @@ import {
     MarkedDetail,
     Description,
     DetailsWrapper,
-} from "../BigPersonTile/styled";
+} from "../bigTilesStyles";
 import { BigMovieImage } from "./styled";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
 import Types from "../Types";
