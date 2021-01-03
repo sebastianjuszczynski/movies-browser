@@ -22,7 +22,7 @@ export const SearchBox = styled.form`
     position: relative;
 `;
 
-export const StyledInputButton = styled.button`
+export const StyledLensButton = styled.button`
     position: absolute;
     width: 19px;
     height: 19px;
