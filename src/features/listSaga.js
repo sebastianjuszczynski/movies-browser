@@ -3,7 +3,7 @@ import { getApiData } from "../getApiData";
 
 import store from "../store";
 import {
-    setActivePage,
+    setActivePath,
     fetchListError,
     fetchListSuccess,
 } from "./listSlice";
@@ -20,6 +20,6 @@ function* fetchListHandler() {
     }
 };
 
-export function* watchSetActivePages() {
-    yield takeEvery(setActivePage.type, fetchListHandler);
+export function* watchSetActivePath() {
+    yield takeEvery(setActivePath.type, fetchListHandler);
 };
