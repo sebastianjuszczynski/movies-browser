@@ -1,14 +1,14 @@
 import React from "react";
-import Header from "../Header";
+import Header from "../Header/Header";
 import { StyledPaperPlane, ImageBox } from "./styled";
 
-const noResult = () => {
+const noResult = ({ urlQuery }) => {
     return (
         <>
-        <Header>Sorry, there are no results for "Input"</Header>
-        <ImageBox>
-        <StyledPaperPlane />
-        </ImageBox>
+            <Header>Sorry, there are no results for {urlQuery}</Header>
+            <ImageBox>
+                <StyledPaperPlane />
+            </ImageBox>
         </>
 
     );
