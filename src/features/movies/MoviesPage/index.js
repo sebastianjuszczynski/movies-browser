@@ -13,15 +13,18 @@ import {
 } from "../../listSlice";
 import Header from "../../../common/Header/Header";
 import { usePageParameter } from "../../pageParameters";
+import apiKey from "../../../common/apiKey";
+import language from "../../../common/language";
 
 const MoviesPage = () => {
     const urlPageNumber = +usePageParameter("page");
+    const urlQuery = usePageParameter("search");
     const popularMovies = useSelector(selectList);
     const isLoading = useSelector(selectLoading);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setActivePath("popularMovies"));
+        dispatch(setActivePath(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`));
         return () => {
             dispatch(resetState());
         };
@@ -29,7 +32,7 @@ const MoviesPage = () => {
 
     useEffect(() => {
         dispatch(setActivePage(urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber))
-    }, [urlPageNumber]);
+    }, [urlPageNumber, urlQuery]);
 
     return (
         <>
