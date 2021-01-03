@@ -9,6 +9,7 @@ import {
     setItemId,
     selectExtraData,
     selectError,
+    resetState,
 } from "../../itemSlice";
 import language from "./../../../common/language";
 import apiKey from "./../../../common/apiKey";
@@ -33,54 +34,57 @@ const MoviePage = () => {
         }));
 
         dispatch(setItemId(id));
+        
+        return () => {
+            dispatch(resetState());
+        };
     }, [id]);
 
-    console.log(movieData)
     return (
         <>
             {loading ? <Loading /> :
-            isError 
-                ? <Error />
-                : (
-                <>
-                    <BigMovieTile
-                        poster_path={movieData.poster_path}
-                        title={movieData.title}
-                        release_date={movieData.release_date}
-                        vote_average={movieData.vote_average}
-                        vote_count={movieData.vote_count}
-                        genre_ids={movieData.genres && movieData.genres.map(genre => genre.id)}
-                        production_countries={movieData.production_countries}
-                        overview={movieData.overview}
-                    />
-                    <Header as="h2">Cast</Header>
-                    <PeopleContainer>
-                        {castCrewData.cast.slice(0, 10).map(({ profile_path, id, character, name, credit_id }) =>
-                            <PersonTile
-                                key={credit_id}
-                                profile_path={profile_path}
-                                id={id}
-                                name={name}
-                                subtitle={character}
+                isError
+                    ? <Error />
+                    : (
+                        <>
+                            <BigMovieTile
+                                poster_path={movieData.poster_path}
+                                title={movieData.title}
+                                release_date={movieData.release_date}
+                                vote_average={movieData.vote_average}
+                                vote_count={movieData.vote_count}
+                                genre_ids={movieData.genres && movieData.genres.map(genre => genre.id)}
+                                production_countries={movieData.production_countries}
+                                overview={movieData.overview}
                             />
-                        )}
-                    </PeopleContainer>
-                    <Header as="h2">Crew</Header>
-                    <PeopleContainer>
-                        {castCrewData.crew.slice(0, 10).map(({ profile_path, id, job, name, credit_id }) =>
-                            <PersonTile
-                                key={credit_id}
-                                profile_path={profile_path}
-                                id={id}
-                                name={name}
-                                subtitle={job}
-                            />
-                        )}
-                    </PeopleContainer>
-                    <div>crew</div>
+                            <Header as="h2">Cast</Header>
+                            <PeopleContainer>
+                                {castCrewData.cast.slice(0, 10).map(({ profile_path, id, character, name, credit_id }) =>
+                                    <PersonTile
+                                        key={credit_id}
+                                        profile_path={profile_path}
+                                        id={id}
+                                        name={name}
+                                        subtitle={character}
+                                    />
+                                )}
+                            </PeopleContainer>
+                            <Header as="h2">Crew</Header>
+                            <PeopleContainer>
+                                {castCrewData.crew.slice(0, 10).map(({ profile_path, id, job, name, credit_id }) =>
+                                    <PersonTile
+                                        key={credit_id}
+                                        profile_path={profile_path}
+                                        id={id}
+                                        name={name}
+                                        subtitle={job}
+                                    />
+                                )}
+                            </PeopleContainer>
+                            <div>crew</div>
 
-                </>
-                )}
+                        </>
+                    )}
         </>
     );
 };
