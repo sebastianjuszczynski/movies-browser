@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { useLocation } from "react-router-dom";
 import {selectQuery, setQuery} from "../listSlice";
 import { useReplacePageParameters } from "../pageParameters";
+import DynamicResultsBox from "./DynamicResultsBox";
 import { SearchBox, Input, StyledLensButton } from "./styled";
 
 const Search = () => {
@@ -24,17 +25,21 @@ const Search = () => {
                 value: 1,
             }
         ]);
+        dispatch(setQuery(""));
     };
 
 
     return (
         <SearchBox onSubmit={onFormSubmit}>
+            <StyledLensButton />
             <Input
                 placeholder={`Search for ${searchText}`}
                 value={query}
                 onChange={({ target }) => dispatch(setQuery(target.value))}
             />
-            <StyledLensButton />
+            {query &&
+                <DynamicResultsBox query={query} />
+            }
         </SearchBox>
     );
 };
