@@ -10,7 +10,6 @@ export const MiniWrapper = styled(Link)`
     line-height: 1.3;
     text-decoration: none;
     color: ${({ theme }) => theme.colors.woodsmoke};
-    
     :hover {
         background-color: ${({ theme }) => theme.colors.tan};
     }
