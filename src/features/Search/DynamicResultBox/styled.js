@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     flex-direction: column;
     position: absolute;
     width: 100%;
-    height: 500px;
+    max-height: 500px;
     overflow: auto;
     background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.black};
@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
         width: 20px;
     }
     ::-webkit-scrollbar-track {
-        border-radius:10px;
+        border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb {
         background: ${({ theme }) => theme.colors.cornsilk};
