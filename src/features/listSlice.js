@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import listPaths from "../common/listPaths";
 
 const listSlice = createSlice({
     name: "list",
@@ -8,7 +7,6 @@ const listSlice = createSlice({
         loading: true,
         numberPages: undefined,
         activePath: "",
-        query: "",
         error: false,
     },
     reducers: {
@@ -33,9 +31,6 @@ const listSlice = createSlice({
             state.loading = true;
             state.error = false;
         },
-        setQuery: (state, { payload: query }) => {
-            state.query = query;
-        },
     },
 });
 
@@ -50,6 +45,5 @@ export const selectList = state => state.list.list;
 export const selectLoading = state => state.list.loading;
 export const selectError = state => state.list.error;
 export const selectNumberPages = state => state.list.numberPages;
-export const selectQuery = state => state.list.query;
 
 export default listSlice.reducer;
