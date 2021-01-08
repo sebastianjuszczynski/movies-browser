@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { selectQuery, setQuery } from "./searchSlice";
+import { selectOpen, selectQuery, setOpen, setQuery } from "./searchSlice";
 import { useReplacePageParameters } from "../pageParameters";
 import DynamicResultsBox from "./DynamicResultBox";
 import { SearchBox, Input, StyledLensButton } from "./styled";
 
 const Search = () => {
     const query = useSelector(selectQuery);
+    const isOpen = useSelector(selectOpen);
     const dispatch = useDispatch();
     const replacePageParameters = useReplacePageParameters();
     const location = useLocation();
@@ -15,7 +16,12 @@ const Search = () => {
 
     useEffect(() => {
         dispatch(setQuery(""));
-    }, [location])
+    }, [location]);
+
+    const onChange = (value) => {
+        dispatch(setQuery(value));
+        dispatch(setOpen(true));
+    };
     
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -40,9 +46,10 @@ const Search = () => {
             <Input
                 placeholder={`Search for ${searchText}`}
                 value={query}
-                onChange={({ target }) => dispatch(setQuery(target.value))}
+                open={isOpen}
+                onChange={({ target }) => onChange(target.value)}
             />
-            {query &&
+             {(query && isOpen) &&
                 <DynamicResultsBox query={query} />
             }
         </SearchBox>
