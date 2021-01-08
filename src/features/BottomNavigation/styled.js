@@ -33,9 +33,12 @@ export const Button = styled.button`
     &:disabled {
         background-color: ${({ theme }) => theme.colors.cornsilk};
     }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     display: flex;
     padding: 8px 12px;
+    margin: 0 4px;
+  }
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     margin: 0 4px;
   }
 `;
@@ -89,3 +92,9 @@ export const DoubleArrow = styled.div`
     display: flex;
   }
 `; 
+export const SingleArrow = styled.div`
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+    display: flex;
+    height: 8px;
+  }
+`;
