@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {ReactComponent as PaperPlane} from "../../assets/NoResult.svg";
-import Header from "../Header";
+import { ReactComponent as PaperPlane } from "../../assets/noResult.svg";
+import Header from "../Header/Header";
 
 export const ImageBox = styled.div`
   display: flex;
