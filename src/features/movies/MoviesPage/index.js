@@ -10,6 +10,7 @@ import {
     setActivePath,
     resetState,
     selectError,
+    selectTotalResults,
 } from "../../listSlice";
 import Header from "../../../common/Header/Header";
 import { usePageParameter } from "../../pageParameters";
@@ -22,6 +23,7 @@ const MoviesPage = () => {
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
     const popularMovies = useSelector(selectList);
+    const totalResults = useSelector(selectTotalResults);
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
     const dispatch = useDispatch();
@@ -39,42 +41,46 @@ const MoviesPage = () => {
 
     return (
         <>
-            <Header>Popular movies</Header>
-
-            {isLoading ? 
-            <Loading /> :
-             isError ? 
-            <Error /> :
-            (!popularMovies.length
-                 ? <NoResult urlQuery={urlQuery} /> 
-                 : (
-                <>
-                    <MoviesContainer>
-                        {popularMovies.map(({
-                            id,
-                            poster_path,
-                            title,
-                            release_date,
-                            vote_average,
-                            vote_count,
-                            genre_ids,
-                        }) =>
-                            <MovieTile
-                                key={id}
-                                id={id}
-                                poster_path={poster_path}
-                                title={title}
-                                release_date={release_date}
-                                vote_average={vote_average}
-                                vote_count={vote_count}
-                                genre_ids={genre_ids}
-                            />
-                        )}
-                    </MoviesContainer>
-                    <BottomNavigation />
-                </>
-            )
-            )
+            {isLoading ?
+                <Loading /> :
+                isError ?
+                    <Error /> :
+                    (!popularMovies.length
+                        ? <NoResult urlQuery={urlQuery} />
+                        : (
+                            <>
+                                <Header>
+                                    {urlQuery
+                                        ? `Search results for "${urlQuery}" (${totalResults})`
+                                        : "Popular Movies"
+                                    }
+                                </Header>
+                                <MoviesContainer>
+                                    {popularMovies.map(({
+                                        id,
+                                        poster_path,
+                                        title,
+                                        release_date,
+                                        vote_average,
+                                        vote_count,
+                                        genre_ids,
+                                    }) =>
+                                        <MovieTile
+                                            key={id}
+                                            id={id}
+                                            poster_path={poster_path}
+                                            title={title}
+                                            release_date={release_date}
+                                            vote_average={vote_average}
+                                            vote_count={vote_count}
+                                            genre_ids={genre_ids}
+                                        />
+                                    )}
+                                </MoviesContainer>
+                                <BottomNavigation />
+                            </>
+                        )
+                    )
             }
         </>
     );

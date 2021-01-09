@@ -7,7 +7,8 @@ import {
     selectLoading,
     selectError,
     setActivePath,
-    resetState
+    resetState,
+    selectTotalResults,
 } from "../../listSlice";
 import { PeopleContainer } from "./../../../common/tiles/TileContainer";
 import Header from "./../../../common/Header/Header";
@@ -23,6 +24,7 @@ const PeoplePage = () => {
     const urlPageNumber = +usePageParameter("page");
     const urlQuery = usePageParameter("search");
     const popularPeople = useSelector(selectList);
+    const totalResults = useSelector(selectTotalResults);
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
 
@@ -45,22 +47,27 @@ const PeoplePage = () => {
                     : (!popularPeople.length
                         ? <NoResult urlQuery={urlQuery} />
                         : (
-                             <>
-                            <Header>Popular People</Header>
-                            <PeopleContainer>
-                                {popularPeople.map(({ profile_path, id, name }) =>
-                                    <PersonTile
-                                        key={id}
-                                        profile_path={profile_path}
-                                        id={id}
-                                        name={name}
-                                    />
-                                )}
-                            </PeopleContainer>
-                            <BottomNavigation />
-                        </>
-                    )
-                )}
+                            <>
+                                <Header>
+                                    {urlQuery
+                                        ? `Search results for "${urlQuery}" (${totalResults})`
+                                        : "Popular People"
+                                    }
+                                </Header>
+                                <PeopleContainer>
+                                    {popularPeople.map(({ profile_path, id, name }) =>
+                                        <PersonTile
+                                            key={id}
+                                            profile_path={profile_path}
+                                            id={id}
+                                            name={name}
+                                        />
+                                    )}
+                                </PeopleContainer>
+                                <BottomNavigation />
+                            </>
+                        )
+                    )}
         </>
     );
 };
