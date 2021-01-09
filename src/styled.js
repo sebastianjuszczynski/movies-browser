@@ -8,6 +8,13 @@ export const Nav = styled.nav`
     min-height: 94px;
     background: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.white};
+
+    @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+      min-height: 80px;
+    }
+    @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+      min-height: 60px;
+    }
 `;
 export const WidthContainer = styled.div`
     max-width: 1400px;
@@ -27,33 +34,31 @@ export const NavContainer = styled.div`
     padding: 0 10px;
     flex-wrap: wrap;
     margin: 0 auto;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    min-height: 71px;
-  }
 `;
 
 export const NavContainerLeft = styled(NavContainer)`
   flex-wrap: nowrap;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    flex-basis: 80vw;
-    justify-content: space-evenly;
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    flex-basis: 60vw;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    flex-basis: 100%;
-    justify-content: space-around;
+    flex-basis: 70%;
   }
 `;
 
 export const NavContainerRight = styled(NavContainer)`
     justify-content: flex-end;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    flex-basis: 100%;
-    justify-content: center;
-  }
+    @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
+      flex-basis: 60%;
+      justify-content: center;
+    }
+    @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+      flex-basis: 100%;
+      justify-content: center;
+    }
 `;
 export const List = styled.ul`
     display: flex;
@@ -104,6 +109,9 @@ export const Title = styled(Link)`
   margin: 0;
   display: flex;
   
+  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+    margin-right: 30px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-size: 18px;
     padding: 10px;

@@ -2,12 +2,13 @@ import styled from "styled-components";
 import magnifier from "./../../assets/magnifier.svg";
 
 export const Input = styled.input`
-    width: 432px;
+    min-width: 432px;
     height: 48px;
     border: 1px solid ${({ theme }) => theme.colors.cornsilk};
     border-radius: ${({ open, value }) => open && value ? "24px 24px 0 0" : "33px"};
     padding-left: 64px;
     background-color: white;
+   
     &:focus {
         outline: none;
     }
@@ -19,7 +20,7 @@ export const Input = styled.input`
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        width: 288px;
+        min-width: 288px;
         height: 44px;
         padding-left: 40px;
     }
