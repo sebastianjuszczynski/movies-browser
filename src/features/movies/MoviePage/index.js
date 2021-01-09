@@ -34,7 +34,7 @@ const MoviePage = () => {
         }));
 
         dispatch(setItemId(id));
-        
+
         return () => {
             dispatch(resetState());
         };
@@ -57,7 +57,9 @@ const MoviePage = () => {
                                 production_countries={movieData.production_countries}
                                 overview={movieData.overview}
                             />
-                            <Header as="h2">Cast</Header>
+                            {castCrewData.cast.length > 0 &&
+                                <Header as="h2">Cast</Header>
+                            }
                             <PeopleContainer>
                                 {castCrewData.cast.slice(0, 10).map(({ profile_path, id, character, name, credit_id }) =>
                                     <PersonTile
@@ -69,7 +71,9 @@ const MoviePage = () => {
                                     />
                                 )}
                             </PeopleContainer>
-                            <Header as="h2">Crew</Header>
+                            {castCrewData.crew.length > 0 &&
+                                <Header as="h2">Crew</Header>
+                            }
                             <PeopleContainer>
                                 {castCrewData.crew.slice(0, 10).map(({ profile_path, id, job, name, credit_id }) =>
                                     <PersonTile
