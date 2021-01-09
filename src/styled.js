@@ -16,6 +16,9 @@ export const WidthContainer = styled.div`
     margin: 0 auto;
     padding: 16px;
 `;
+export const WidthNavContainer = styled(WidthContainer)`
+  padding: 0;
+`;
 export const NavContainer = styled.div`
     display: flex;
     flex-basis: 50%;
