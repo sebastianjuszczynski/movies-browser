@@ -26,8 +26,7 @@ export const Rate = styled.span`
 `;
 export const Votes = styled.span`
     font-size: 16px;
-    color: ${({ theme, big }) => big ? theme.colors.black : theme.colors.waterloo};
-    font-weight: normal;
+    color: ${({ theme, big }) => big ? theme.unchangeableColors.black : theme.colors.subtitle};    font-weight: normal;
     margin-right: 12px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {

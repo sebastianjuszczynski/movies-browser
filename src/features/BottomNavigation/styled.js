@@ -24,14 +24,14 @@ export const MobileContainer = styled(DesktopContainer)`
 export const Button = styled.button`
     margin: 0 12px;
     padding: 8px 16px 8px 16px;
-    background: ${({ theme }) => theme.colors.pattensBlue};
+    background: ${({ theme }) => theme.colors.activeNavButton};;
     border-radius: 5px;
-    color: ${({ theme }) => theme.colors.mineShaft};
+    color: ${({ theme }) => theme.colors.text};
     border: none;
     cursor: pointer;
 
     &:disabled {
-        background-color: ${({ theme }) => theme.colors.cornsilk};
+        background-color: ${({ theme }) => theme.colors.typeBox};
     }
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     display: flex;
@@ -47,14 +47,14 @@ export const PageCounter = styled.span`
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    color: ${({ theme }) => theme.colors.waterloo};
+    color: ${({ theme }) => theme.colors.subtitle};
 `;
 
 export const Number = styled.span`
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
-    color: ${({theme}) => theme.colors.woodsmoke};
+    color: ${({theme}) => theme.colors.text};
 
     @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     font-size: 10px;

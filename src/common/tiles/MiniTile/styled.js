@@ -4,14 +4,14 @@ import styled from "styled-components";
 export const MiniWrapper = styled(Link)`
     display: flex;
     padding: 16px;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.cornsilk};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.typebox};
     font-weight: 500;
     font-size: 22px;
     line-height: 1.3;
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.woodsmoke};
+    color: ${({ theme }) => theme.colors.text};
     :hover {
-        background-color: ${({ theme }) => theme.colors.tan};
+        background-color: ${({ theme }) => theme.colors.background};
     }
 `;
 

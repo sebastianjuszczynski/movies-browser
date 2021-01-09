@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: inherit;
     };
     body {
-        background: ${({ theme }) => theme.colors.whisper};
+        background: ${({ theme }) => theme.colors.background};
         font-family: "Poppins", sans-serif;
     };
     #root {
