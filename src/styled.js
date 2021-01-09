@@ -11,7 +11,7 @@ export const Nav = styled.nav`
 `;
 export const WidthContainer = styled.div`
     max-width: 1400px;
-    min-height: 100%;
+    min-height: inherit;
     margin: 0 auto;
     padding: 16px;
 `;
@@ -103,9 +103,10 @@ export const Title = styled(Link)`
   padding-left: 16px;
   margin: 0;
   display: flex;
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-size: 18px;
-    padding: 10;
+    padding: 10px;
     margin-right: 22px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
@@ -116,8 +117,11 @@ export const Title = styled(Link)`
 `;
 export const Logo = styled.img`
     height: 40px;
+  
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+    height: 28px;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    height: 12px;
     height: 17px;
   }
 `; 
