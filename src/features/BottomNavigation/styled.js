@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ReactComponent as ArrowLeft } from "../../assets/arrowLeft.svg";
-import { ReactComponent as ArrowRight } from "../../assets/arrowRight.svg";
+import { ReactComponent as leftArrow } from "../../assets/leftArrow.svg";
+import { ReactComponent as rightArrow } from "../../assets/rightArrow.svg";
 
 export const DesktopContainer = styled.div`
     width: fit-content;
@@ -61,7 +61,7 @@ export const Number = styled.span`
   }
 `;
 
-export const StyledArrowLeft = styled(ArrowLeft)`
+export const StyledArrowLeft = styled(leftArrow)`
   margin-right: 8px;
   height: 11px;
   width: 7px;
@@ -74,7 +74,7 @@ export const StyledArrowLeft = styled(ArrowLeft)`
   }
 `;
 
-export const StyledArrowRight = styled(ArrowRight)`
+export const StyledArrowRight = styled(rightArrow)`
   height: 11px;
   width:7px;
   margin-left: 8px;
