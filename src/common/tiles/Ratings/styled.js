@@ -17,7 +17,7 @@ export const Star = styled.img`
 export const Rate = styled.span`
     margin: 0 12px;
     font-weight: 600;
-    font-size: 16px;
+    font-size: ${({ big }) => big ? "22px" : "16px"};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 13px;
@@ -26,7 +26,9 @@ export const Rate = styled.span`
 `;
 export const Votes = styled.span`
     font-size: 16px;
-    color: ${({ theme }) => theme.colors.waterloo};
+    color: ${({ theme, big }) => big ? theme.colors.black : theme.colors.waterloo};
+    font-weight: normal;
+    margin-right: 12px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 13px;
