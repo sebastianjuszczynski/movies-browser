@@ -19,6 +19,7 @@ import language from "./../../../common/language";
 import apiKey from "./../../../common/apiKey";
 import Error from "../../../common/Error";
 import Button from "../../../common/Button.js";
+import { WidthContainer } from "../../../styled";
 
 const PersonPage = () => {
     const { id } = useParams();
@@ -43,7 +44,7 @@ const PersonPage = () => {
     }, [id])
 
     return (
-        <>
+        <WidthContainer>
             {isLoading
                 ? <Loading />
                 : isError
@@ -152,7 +153,7 @@ const PersonPage = () => {
                         }
                     </>
             }
-        </>
+        </WidthContainer>
     )
 };
 
