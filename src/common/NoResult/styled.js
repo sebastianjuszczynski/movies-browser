@@ -9,5 +9,9 @@ export const ImageBox = styled.div`
 `;
 export const StyledPaperPlane = styled(paperPlane)`
     text-align: center;
-    height: 50vh;
+    max-height: 40vh;
+  
+    @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+        padding: 50px;
+  }
 `;
