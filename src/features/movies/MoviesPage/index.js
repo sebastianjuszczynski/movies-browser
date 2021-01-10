@@ -19,6 +19,8 @@ import language from "../../../common/language";
 import NoResult from "./../../../common/NoResult";
 import Error from "../../../common/Error";
 import { WidthContainer } from "../../../styled";
+import { selectGenres } from "../../../common/commonSlice";
+import Types from "../../../common/tiles/Types";
 
 const MoviesPage = () => {
     const urlPageNumber = +usePageParameter("page");
@@ -27,6 +29,7 @@ const MoviesPage = () => {
     const totalResults = useSelector(selectTotalResults);
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
+    const genresList = useSelector(selectGenres);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -50,6 +53,11 @@ const MoviesPage = () => {
                         ? <NoResult urlQuery={urlQuery} />
                         : (
                             <>
+                                <Types
+                                    genre_ids={genresList.map(genre => genre.id)}
+                                    clickable={true}
+                                    big={true}
+                                />
                                 <Header>
                                     {urlQuery
                                         ? `Search results for "${urlQuery}" (${totalResults})`
