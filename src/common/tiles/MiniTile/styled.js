@@ -11,12 +11,14 @@ export const MiniWrapper = styled(Link)`
     line-height: 1.3;
     text-decoration: none;
     color: ${({ theme }) => theme.colors.text};
+    
     :hover {
         background-color: ${({ theme }) => theme.colors.background};
     }
 `;
 
 export const MiniImage = styled.img`
+    object-fit: cover;
     flex: 0 1 auto;
     display: block;
     width: 80px;

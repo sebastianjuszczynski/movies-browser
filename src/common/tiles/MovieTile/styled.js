@@ -14,6 +14,7 @@ export const MovieWrapper = styled(Wrapper)`
     }
 `;
 export const MovieImage = styled(Image)`
+    object-fit: cover;
     margin-bottom: 16px;
     height: 434px;
     width: 292px;
