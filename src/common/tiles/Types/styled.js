@@ -14,6 +14,17 @@ export const TypeBox = styled.div`
     line-height: 1;
     color: ${({ theme }) => theme.colors.text};
     flex-grow: 0;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
+      font-size: 12px;
+      font-weight: 400;
+      padding: 6px 12px;
+    }
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+      font-size: 10px;
+      font-weight: 400;
+      padding: 4px 8px;
+    }
 `;
 export const BigTypeBox = styled(TypeBox)`
   line-height: 140%;
@@ -37,14 +48,4 @@ export const BigTypeBox = styled(TypeBox)`
     filter: brightness(160%);
   `}
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-      font-size: 12px;
-      font-weight: 400;
-      padding: 6px 12px;
-    }
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-      font-size: 10px;
-      font-weight: 400;
-      padding: 4px 8px;
-    }
 `;
