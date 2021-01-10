@@ -11,7 +11,7 @@ export const Wrapper = styled(Link)`
     min-height: fit-content;
 `;
 export const Image = styled.img`
-    /* display: block; */
+    display: block;
     border-radius: 5px;
     flex-shrink: 0;
 `;
