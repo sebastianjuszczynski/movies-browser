@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { Image } from "./../tilesStyles";
 
 export const BigTileImage = styled(Image)`
-    width: 399px;
-    height: 564px;
+  object-fit: cover;
+`;
+export const ImageWrapper = styled.div`
+  max-height: 564px;
+  max-width: 399px;
 `;
