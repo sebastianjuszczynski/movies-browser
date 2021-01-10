@@ -5,6 +5,7 @@ const commonSlice = createSlice({
     initialState: {
         genresList: [],
         loading: true,
+        theme: JSON.parse(localStorage.getItem("theme")) || [],
     },
     reducers: {
         fetchCommon: state => {
@@ -16,6 +17,10 @@ const commonSlice = createSlice({
         },
         fetchCommonError: state => {
             state.loading = false;
+        },
+        setTheme: (state, { payload }) => {
+            state.theme = payload;
+            localStorage.setItem("theme", JSON.stringify(state.theme));
         },
     },
 });

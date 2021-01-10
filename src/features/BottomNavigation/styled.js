@@ -24,14 +24,15 @@ export const MobileContainer = styled(DesktopContainer)`
 export const Button = styled.button`
     margin: 0 12px;
     padding: 8px 16px 8px 16px;
-    background: ${({ theme }) => theme.colors.activeNavButton};;
+    background: ${({ theme }) => theme.colors.activeNavButton};
     border-radius: 5px;
     color: ${({ theme }) => theme.colors.text};
     border: none;
     cursor: pointer;
 
     &:disabled {
-        background-color: ${({ theme }) => theme.colors.typeBox};
+      background: ${({ theme }) => theme.colors.disabledNavButton};
+      cursor: unset;
     }
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     display: flex;
