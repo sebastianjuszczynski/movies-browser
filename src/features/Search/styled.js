@@ -2,7 +2,8 @@ import styled from "styled-components";
 import magnifier from "./../../assets/magnifier.svg";
 
 export const Input = styled.input`
-    min-width: 432px;
+    width: 432px;
+    max-width: 90vw;
     height: 48px;
     border: 1px solid ${({ theme }) => theme.colors.typeBox};
     border-radius: ${({ open, value }) => open && value ? "24px 24px 0 0" : "33px"};
