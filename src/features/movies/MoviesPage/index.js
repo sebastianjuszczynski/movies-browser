@@ -34,8 +34,8 @@ const MoviesPage = () => {
 
     useEffect(() => {
         dispatch(setActivePath(urlQuery
-            ? `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
-            : `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
+            ? `https://api.themoviedb.org/3/search/movie${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
+            : `https://api.themoviedb.org/3/movie/popular${apiKey}${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
         );
 
         return () => {
