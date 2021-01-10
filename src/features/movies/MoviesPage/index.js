@@ -50,12 +50,12 @@ const MoviesPage = () => {
 
     return (
         <WidthContainer>
-            {!urlQuery &&
+            {!urlQuery && (
                 <Types
                     genre_ids={genresList.map(genre => genre.id)}
                     clickable={true}
                     big={true}
-                />}
+                />)}
             {isLoading ?
                 <Loading /> :
                 isError ?
