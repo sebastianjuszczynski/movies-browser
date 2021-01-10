@@ -16,7 +16,7 @@ export const Input = styled.input`
 
     &::placeholder {
         font-size: 16px;
-        line-height: 150%;
+        line-height: 1.5;
         color: ${({ theme }) => theme.colors.subtitle};
     }
 
@@ -24,6 +24,7 @@ export const Input = styled.input`
         min-width: 288px;
         height: 44px;
         padding-left: 40px;
+        margin: 16px auto;
     }
 `;
 
