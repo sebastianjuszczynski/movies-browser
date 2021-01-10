@@ -7,7 +7,6 @@ import {
     selectLoading,
     selectError,
     setActivePath,
-    resetState,
     selectTotalResults,
 } from "../../listSlice";
 import { PeopleContainer } from "./../../../common/tiles/TileContainer";
@@ -34,9 +33,6 @@ const PeoplePage = () => {
             ? `https://api.themoviedb.org/3/search/person${apiKey}${language}&query=${urlQuery}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`
             : `https://api.themoviedb.org/3/person/popular${apiKey}${language}&page=${urlPageNumber < 1 || urlPageNumber > 500 ? 1 : urlPageNumber}`)
         );
-        return () => {
-            dispatch(resetState());
-        };
     }, [urlPageNumber, urlQuery, dispatch])
 
     return (

@@ -26,14 +26,6 @@ const listSlice = createSlice({
             state.activePath = name;
             state.loading = true;
         },
-        resetState: (state) => {
-            state.list = [];
-            state.activePath = "";
-            state.numberPages = undefined;
-            state.loading = true;
-            state.error = false;
-            state.totalResults = undefined;
-        },
     },
 });
 
@@ -41,7 +33,6 @@ export const {
     fetchListSuccess,
     fetchListError,
     setActivePath,
-    resetState,
     setQuery,
 } = listSlice.actions;
 export const selectList = state => state.list.list;
