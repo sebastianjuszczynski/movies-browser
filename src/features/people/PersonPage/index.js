@@ -62,12 +62,6 @@ const PersonPage = () => {
                             <>
                                 <Header as="h2">
                                     Cast {`(${castCrewData.cast.length})`}
-                                    {(
-                                        castCrewData.cast.length > 8
-                                        && castCrewData.cast.length === castDisplayed
-                                    ) &&
-                                        <Button onClick={() => { setCastDisplayed(8) }}>Hide</Button>
-                                    }
                                 </Header>
                                 <MoviesContainer>
                                     {castCrewData.cast
@@ -108,13 +102,6 @@ const PersonPage = () => {
                             <>
                                 <Header as="h2">
                                     Crew {`(${castCrewData.crew.length})`}
-                                    {(
-                                        castCrewData.crew.length > 8
-                                        && castCrewData.crew.length === crewDisplayed
-                                    )
-                                        &&
-                                        <Button onClick={() => { setCrewDisplayed(8) }}>Hide</Button>
-                                    }
                                 </Header>
                                 <MoviesContainer>
                                     {castCrewData.crew
