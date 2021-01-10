@@ -13,6 +13,9 @@ export const GlobalStyle = createGlobalStyle`
         background: ${({ theme }) => theme.colors.background};
         font-family: "Poppins", sans-serif;
     };
+    main {
+        padding-bottom: 50px;
+    };
     #root {
         min-height: 100vh;
         position: relative;
