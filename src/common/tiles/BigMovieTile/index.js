@@ -1,15 +1,17 @@
 import React from "react";
 import Ratings from "../Ratings";
 import {
-    BigTileWrapper,
     BigTileHeader,
     BigDetailsContainer,
     Detail,
     MarkedDetail,
     Description,
     DetailsWrapper,
+    MobileWrapper,
+    DesktopWrapper,
+    TopWrapper,
 } from "../bigTilesStyles";
-import { BigMovieImage } from "./styled";
+import { BigMovieWrapper, BigMovieImage } from "./styled";
 import noPosterImage from "./../../../assets/noPosterImage.svg";
 import Types from "../Types";
 
@@ -24,7 +26,7 @@ const BigMovieTile = ({
     overview,
 }) => {
     return (
-        <BigTileWrapper as="div">
+        <BigMovieWrapper as="div">
             <BigMovieImage
                 src={poster_path
                     ? `https://image.tmdb.org/t/p/w342${poster_path}`
@@ -62,7 +64,7 @@ const BigMovieTile = ({
                     </Description>
                 }
             </BigDetailsContainer>
-        </BigTileWrapper >
+        </BigMovieWrapper >
     );
 };
 

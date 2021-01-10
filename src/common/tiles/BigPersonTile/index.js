@@ -1,6 +1,5 @@
 import React from "react";
 import {
-    BigTileWrapper,
     BigTileHeader,
     BigDetailsContainer,
     Detail,
@@ -11,13 +10,13 @@ import {
     DesktopWrapper,
     TopWrapper,
 } from "../bigTilesStyles";
-import { BigTileImage } from "./styled";
+import { BigTileImage, BigPersonWrapper } from "./styled";
 import noProfileImage from "./../../../assets/noProfileImage.svg";
 
 const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography }) => {
 
     return (
-      <BigTileWrapper as="div">
+      <BigPersonWrapper as="div">
         <DesktopWrapper>
           <BigTileImage
             src={
@@ -75,7 +74,7 @@ const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography
           </TopWrapper>
           {biography && <Description>{biography}</Description>}
         </MobileWrapper>
-      </BigTileWrapper>
+      </BigPersonWrapper>
     );
 };
 

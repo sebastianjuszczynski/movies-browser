@@ -2,12 +2,16 @@ import styled from "styled-components";
 import { Wrapper } from "./tilesStyles";
 
 export const BigTileWrapper = styled(Wrapper)`
-    flex-direction: row;
+    display: block;
     width: 100%;
     padding: 40px;
     margin: 56px auto 64px;
 
+    @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+        min-height: 519px;
+    }
     @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+        min-height: unset;
         padding: 25px;
         margin: 23px 0 42px;
     }
@@ -21,10 +25,12 @@ export const BigTileHeader = styled.div`
     font-weight: 600;
     font-size: 36px;
     line-height: 1.2;
+    margin-bottom: 24px;
 
     @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
         font-weight: 500;
         font-size: 26px;
+        margin-bottom: 0;
     }
     @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
         font-size: 16px;
@@ -34,7 +40,6 @@ export const BigDetailsContainer = styled.div`
     display: grid;
     height: fit-content;
     grid-gap: 24px;
-    margin-left: 40px;
 
     @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
         display: grid;
@@ -49,10 +54,12 @@ export const BigDetailsContainer = styled.div`
 export const Detail = styled.div`
     font-size: 18px;
     line-height: 1.2;
+    margin-bottom: 8px;
 
     @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
         font-size: 15px;
         font-weight: 400;
+        margin-bottom: 0;
     }
     @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
         font-size: 12px;
@@ -78,11 +85,18 @@ export const Description = styled.div`
 export const DetailsWrapper = styled.div`
     display: grid;
     grid-gap: 8px;
+    margin-bottom: 24px;
+ 
+    @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+        margin-bottom: 0;
+        display: grid;
+        grid-gap: 8px;
+    }
 `;
 export const DesktopWrapper = styled.div`
-    display: flex;
+    display: block;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
         display: none;
   }
 `;
@@ -90,7 +104,7 @@ export const DesktopWrapper = styled.div`
 export const MobileWrapper = styled.div`
     display: none;
   
-  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
         display: block;
     }
 `;
