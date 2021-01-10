@@ -8,14 +8,13 @@ import {
     Description,
     DetailsWrapper,
 } from "../bigTilesStyles";
-import { BigTileImage, ImageWrapper } from "./styled";
+import { BigTileImage } from "./styled";
 import noProfileImage from "./../../../assets/noProfileImage.svg";
 
 const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography }) => {
 
     return (
         <BigTileWrapper as="div">
-        <ImageWrapper>
           <BigTileImage
             src={
               profile_path
@@ -24,7 +23,6 @@ const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography
             }
             alt={`Zdjęcie ${name}`}
           />
-        </ImageWrapper>
         <BigDetailsContainer>
           {name && <BigTileHeader>{name}</BigTileHeader>}
           <DetailsWrapper>
