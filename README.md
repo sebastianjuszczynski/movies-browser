@@ -1,22 +1,28 @@
 # Movie Browser
 
 [live] https://sebastianjuszczynski.github.io/movie-browser/
+## Tech Stack
+
+- React
+- React Router
+- React Redux
+- Redux Toolkit
+- Redux Saga
+- Axios
+- Styled Components
+- localStorage
+
+## External sources
+
+ - https://api.themoviedb.org/ (database for entire application)
+
+ ## Features
+
+Application allows to browse movies and actors based on external API, which is implemented with use of Axios.
+Entire project is styled with use of Styled Components, and it is also adapt to follow Responsive Web Design Principles.
+There is a dropdown search window after typing in input for quicker and more comfortable searching process.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-React
-React Router
-React Redux
-Redux Toolkit
-Redux Saga
-Axios
-Styled Components
-JSX
-create-react-app
-localStorage
-
-
-https://api.themoviedb.org/
 
 ## Available Scripts
 
