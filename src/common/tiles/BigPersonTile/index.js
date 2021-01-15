@@ -14,6 +14,7 @@ import { BigTileImage, BigPersonWrapper } from "./styled";
 import noProfileImage from "./../../../assets/noProfileImage.svg";
 
 const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography }) => {
+    const date = new Date(birthday);
 
     return (
       <BigPersonWrapper as="div">
@@ -24,15 +25,13 @@ const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography
                 ? `https://image.tmdb.org/t/p/h632${profile_path}`
                 : noProfileImage
             }
-            alt={`Zdjęcie ${name}`}
+            alt={`Photo of ${name}`}
           />
-
-          <BigDetailsContainer>
             {name && <BigTileHeader>{name}</BigTileHeader>}
             <DetailsWrapper>
               {birthday && (
                 <Detail>
-                  <MarkedDetail>Date of birth: </MarkedDetail> {birthday}
+                  <MarkedDetail>Date of birth: </MarkedDetail> {`${date.toLocaleDateString()}`}
                 </Detail>
               )}
               {place_of_birth && (
@@ -42,7 +41,6 @@ const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography
               )}
             </DetailsWrapper>
             {biography && <Description>{biography}</Description>}
-          </BigDetailsContainer>
         </DesktopWrapper>
         <MobileWrapper>
           <TopWrapper>
@@ -52,7 +50,7 @@ const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography
                   ? `https://image.tmdb.org/t/p/h632${profile_path}`
                   : noProfileImage
               }
-              alt={`Zdjęcie ${name}`}
+              alt={`Photo of ${name}`}
             />
 
             <BigDetailsContainer>
@@ -60,7 +58,7 @@ const BigPersonTile = ({ profile_path, name, birthday, place_of_birth, biography
               <DetailsWrapper>
                 {birthday && (
                   <Detail>
-                    <MarkedDetail>Date of birth: </MarkedDetail> {birthday}
+                    <MarkedDetail>Date of birth: </MarkedDetail> {`${date.toLocaleDateString()}`}
                   </Detail>
                 )}
                 {place_of_birth && (
