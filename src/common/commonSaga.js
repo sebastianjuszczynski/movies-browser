@@ -10,13 +10,12 @@ import language from "./language";
 
 function* fetchCommonHandler() {
     try {
-        const data = yield call(() => getApiData(
+        const genres = yield call(getApiData,
             `https://api.themoviedb.org/3/genre/movie/list${apiKey}${language}`
-        ));
-        yield put(fetchCommonSuccess(data));
+        );
+        yield put(fetchCommonSuccess(genres));
     } catch (error) {
         yield put(fetchCommonError());
-        yield call(alert, "Coś poszło nie tak");
     }
 };
 
