@@ -7,6 +7,7 @@ export const Input = styled.input`
     height: 48px;
     border: 1px solid ${({ theme }) => theme.colors.typeBox};
     border-radius: ${({ open, value }) => open && value ? "24px 24px 0 0" : "33px"};
+    padding: 0;
     padding-left: 64px;
     background-color: ${({ theme }) => theme.unchangeableColors.white};
    
@@ -18,12 +19,6 @@ export const Input = styled.input`
         font-size: 16px;
         line-height: 1.5;
         color: ${({ theme }) => theme.colors.subtitle};
-    }
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        min-width: 288px;
-        height: 44px;
-        padding-left: 40px;
     }
 `;
 
@@ -46,11 +41,4 @@ export const StyledMagnifierButton = styled.button`
     transform: translateY(-50%);
     cursor: pointer;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        height: 14px;
-        left: 16px;
-        top: 15px;
-        width: 14px;
-        background-size: 14px;
-    }
 `;
