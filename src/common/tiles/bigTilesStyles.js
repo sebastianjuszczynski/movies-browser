@@ -7,6 +7,11 @@ export const BigTileWrapper = styled(Wrapper)`
   padding: 40px;
   margin: 40px auto 64px;
   overflow: hidden;
+
+  &:hover {
+    filter: unset;
+  }
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     display: flex;
     flex-direction: column;
