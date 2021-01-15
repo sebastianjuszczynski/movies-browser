@@ -60,4 +60,11 @@ export const Subtitle = styled.p`
     text-align: center;
     color: ${({ theme }) => theme.colors.subtitle};
     margin: 0;
+
+    @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+        font-size: 14px;
+    }
+    @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+        font-size: 13px;
+  }
 `;

@@ -10,7 +10,7 @@ export const Wrapper = styled(Link)`
     color: ${({ theme }) => theme.colors.text};
 
     &:hover {
-    filter: brightness(95%);
+    filter: brightness(90%);
   }
 `;
 export const Image = styled.img`
