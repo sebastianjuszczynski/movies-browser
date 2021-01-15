@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import { Image } from "./../tilesStyles";
-import {BigTileWrapper} from "./../bigTilesStyles";
+import { BigTileWrapper } from "./../bigTilesStyles";
 
 export const BigMovieWrapper = styled(BigTileWrapper)`
   min-height: 544px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
+      min-height: unset;
+  }
 `;
 
 export const BigMovieImage = styled(Image)`
@@ -13,15 +17,15 @@ export const BigMovieImage = styled(Image)`
   height: 464px;
   margin: 0 40px 16px 0;
 
-  @media (max-width: ${({theme}) => theme.breakpoints.screenSmall}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
     margin: 0 30px 6px 0;
   }
-  @media (max-width: ${({theme}) => theme.breakpoints.bigMobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     margin: 0;
     height: 316px;
     width: unset;
   }
-  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     height: 169px;
   }
 `;
