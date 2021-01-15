@@ -66,7 +66,7 @@ const MoviePage = () => {
                                     production_countries={movieData.production_countries}
                                     overview={movieData.overview}
                                 />
-                                {castCrewData.cast.length > 0 &&
+                                {castCrewData.cast && castCrewData.cast.length > 0 &&
                                     <>
                                         <Header as="h2">
                                             Cast
@@ -93,7 +93,7 @@ const MoviePage = () => {
                                     </>
 
                                 }
-                                {castCrewData.crew.length > 0 &&
+                                {castCrewData.crew && castCrewData.crew.length > 0 &&
                                     <>
                                         <Header as="h2">
                                             Crew

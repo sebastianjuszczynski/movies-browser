@@ -53,7 +53,7 @@ const PersonPage = () => {
                             place_of_birth={personData.place_of_birth}
                             biography={personData.biography}
                         />
-                        {castCrewData.cast.length > 0 &&
+                        {castCrewData.cast && castCrewData.cast.length > 0 &&
                             <>
                                 <Header as="h2">
                                     Cast {`(${castCrewData.cast.length})`}
@@ -93,7 +93,7 @@ const PersonPage = () => {
                                 }
                             </>
                         }
-                        {castCrewData.crew.length > 0 &&
+                        {castCrewData.crew && castCrewData.crew.length > 0 &&
                             <>
                                 <Header as="h2">
                                     Crew {`(${castCrewData.crew.length})`}
