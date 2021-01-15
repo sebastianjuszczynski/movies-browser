@@ -14,11 +14,11 @@ export const MobileContainer = styled(DesktopContainer)`
   display: none;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    display: unset;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 32px auto 60px;
   }
 `;
 export const Button = styled.button`
@@ -32,7 +32,10 @@ export const Button = styled.button`
 
     &:disabled {
       background: ${({ theme }) => theme.colors.disabledNavButton};
-      cursor: unset;
+      cursor: not-allowed;
+      transform: unset;
+      transition: unset;
+      filter: brightness(60%);
     }
     &:hover {
       transform: scale(1.05);
@@ -41,18 +44,19 @@ export const Button = styled.button`
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     display: flex;
     padding: 8px 12px;
-    margin: 0 5px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     margin: 0 4px;
   }
 `;
 export const PageCounter = styled.span`
     margin: 0 24px;
     font-size: 16px;
-    font-weight: 400;
     line-height: 1.5;
     color: ${({ theme }) => theme.colors.subtitle};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+      font-size:10px;	    
+      margin: 0 8px;	    
+    }	  
 `;
 
 export const Number = styled.span`
@@ -62,12 +66,12 @@ export const Number = styled.span`
     color: ${({ theme }) => theme.colors.text};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    font-size: 10px;
+    font-size: 12px;
   }
 `;
 
 export const StyledArrowLeft = styled(leftArrow)`
-  margin-right: 8px;
+  margin: 0 4px 0 0;
   height: 11px;
   width: 7px;
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
@@ -82,13 +86,9 @@ export const StyledArrowLeft = styled(leftArrow)`
 export const StyledArrowRight = styled(rightArrow)`
   height: 11px;
   width:7px;
-  margin-left: 8px;
+  margin: 0 0 0 4px;
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    margin: 0 2px;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    height:8px;
-    width: 5px;
+    margin: 0;
   }
 `;
 

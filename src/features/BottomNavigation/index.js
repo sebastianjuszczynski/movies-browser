@@ -34,6 +34,7 @@ const BottomNavigation = () => {
           disabled={page === 1}
           onClick={() => onButtonClick(1)}>
           <StyledArrowLeft />
+          <StyledArrowLeft />
           {"First"}
         </Button>
         <Button
@@ -55,6 +56,7 @@ const BottomNavigation = () => {
           disabled={page === numberPages}
           onClick={() => onButtonClick(numberPages)}>
           {"Last"}
+          <StyledArrowRight />
           <StyledArrowRight />
         </Button>
       </DesktopContainer>
