@@ -44,6 +44,8 @@ export const BigTileHeader = styled.div`
   font-size: 36px;
   line-height: 120%;
   margin-bottom: 24px;
+  overflow-wrap: anywhere;
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     font-weight: 500;
     font-size: 26px;
