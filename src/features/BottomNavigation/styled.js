@@ -29,17 +29,17 @@ export const Button = styled.button`
     color: ${({ theme }) => theme.colors.text};
     border: none;
     cursor: pointer;
+    transition: filter 0.4s;
 
     &:disabled {
       background: ${({ theme }) => theme.colors.disabledNavButton};
-      cursor: not-allowed;
+      cursor: no-drop;
       transform: unset;
       transition: unset;
-      filter: brightness(60%);
+      filter: brightness(75%);
     }
     &:hover {
-      transform: scale(1.05);
-      transition: transform 0.4s;
+      filter: brightness(90%);
     }
   @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
     display: flex;
