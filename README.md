@@ -1,7 +1,6 @@
 # Movie Browser
 
 [Live demo] https://sebastianjuszczynski.github.io/movies-browser/
-test
 ## Tech Stack
 
 - React
