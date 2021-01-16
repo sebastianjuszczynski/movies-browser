@@ -41,7 +41,7 @@ const BigMovieTile = ({
           {production_countries && production_countries.length > 0 && (
             <Detail>
               <MarkedDetail>Production: </MarkedDetail>
-              {production_countries.map(country => country.name).join(", ")}
+              {production_countries.map((country) => country.name).join(", ")}
             </Detail>
           )}
           {release_date && (
