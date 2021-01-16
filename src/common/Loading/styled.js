@@ -14,12 +14,14 @@ export const Image = styled.img`
     animation: spin 1.25s infinite linear;  
 
     @keyframes spin {
-        from {
-            transform: unset;
-        }
-        to {
-            transform: translateX(360deg);
-        }
+    from {
+      transform: unset;
     }
-
+    to {
+      transform: translateX(360deg);
+    }
+    }
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        height: 40px;
+    }
 `;
