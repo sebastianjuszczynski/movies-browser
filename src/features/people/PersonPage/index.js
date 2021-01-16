@@ -87,10 +87,10 @@ const PersonPage = () => {
                                         ))}
                                 </MoviesContainer>
                                 {castCrewData.cast.length > castDisplayed &&
-                                    <Button onClick={() => { setCastDisplayed(castCrewData.cast.length) }}>Show All</Button>
+                                    <Button as="button" onClick={() => { setCastDisplayed(castCrewData.cast.length) }}>Show All</Button>
                                 }
                                 {(castCrewData.cast.length > displayedItemsNumber && castCrewData.cast.length === castDisplayed) &&
-                                    <Button onClick={() => { setCastDisplayed(displayedItemsNumber) }}>Hide</Button>
+                                    <Button as="button" onClick={() => { setCastDisplayed(displayedItemsNumber) }}>Hide</Button>
                                 }
                             </>
                         }
@@ -127,10 +127,10 @@ const PersonPage = () => {
                                         ))}
                                 </MoviesContainer>
                                 {castCrewData.crew.length > crewDisplayed &&
-                                    <Button onClick={() => { setCrewDisplayed(castCrewData.crew.length) }}>Show All</Button>
+                                    <Button as="button" onClick={() => { setCrewDisplayed(castCrewData.crew.length) }}>Show All</Button>
                                 }
                                 {(castCrewData.crew.length > displayedItemsNumber && castCrewData.crew.length === crewDisplayed) &&
-                                    <Button onClick={() => { setCrewDisplayed(displayedItemsNumber) }}>Hide</Button>
+                                    <Button as="button" onClick={() => { setCrewDisplayed(displayedItemsNumber) }}>Hide</Button>
                                 }
                             </>
                         }
