@@ -19,8 +19,8 @@
  ## Features
 
 Application allows to browse movies and actors based on external API, which is implemented with use of Axios.
-Entire project is styled with use of Styled Components, and it is also adapt to follow Responsive Web Design Principles.
-There is a dropdown search window after typing in input for quicker and more comfortable searching process.
+Entire project is styled with use of Styled Components, and it is also adapted to follow Responsive Web Design Principles.
+There is a dropdown search window after typing in input for quicker and more convenient searching process.
 
 ## Available Scripts
 
