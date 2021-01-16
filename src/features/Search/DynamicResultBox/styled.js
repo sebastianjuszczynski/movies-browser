@@ -14,13 +14,13 @@ export const Wrapper = styled.div`
     border-top: none;
     z-index: 1;
     ::-webkit-scrollbar {
-        width: 20px;
+        width: 5px;
     }
     ::-webkit-scrollbar-track {
-        border-radius: 10px;
+        border-radius: 5px;
     }
     ::-webkit-scrollbar-thumb {
         background: ${({theme}) => theme.unchangeableColors.cornsilk};
-        border-radius: 10px;
+        border-radius: 2px;
     }
 `;
