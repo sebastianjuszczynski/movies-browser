@@ -22,6 +22,22 @@ Application allows to browse movies and actors based on external API, which is i
 Entire project is styled with use of Styled Components, and it is also adapted to follow Responsive Web Design Principles.
 There is a dropdown search window after typing in input for quicker and more convenient searching process.
 
+## Example usage
+
+![Example](https://github.com/sebastianjuszczynski/movies-browser/blob/main/demo/example.gif)
+
+## Change of theme
+
+![Example theme changing gif](https://github.com/sebastianjuszczynski/movies-browser/blob/main/demo/themeChanging.gif)
+
+## Searching
+
+![Example searching](https://github.com/sebastianjuszczynski/movies-browser/blob/main/demo/searching.gif)
+
+## Sorting
+
+![Example sorting](https://github.com/sebastianjuszczynski/movies-browser/blob/main/demo/sorting.gif)
+
 ## Available Scripts
 
 In the project directory, you can run:
