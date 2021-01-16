@@ -33,7 +33,8 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCommon());
-  }, [dispatch])
+  }, [dispatch]);
+  
 
   return (
     <ThemeProvider theme={isNormalTheme ? theme : darkTheme}>
