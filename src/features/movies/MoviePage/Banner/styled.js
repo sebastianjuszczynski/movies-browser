@@ -56,8 +56,6 @@ export const Title = styled.h1`
     line-height: 120%;
     margin-bottom: 24px;
     color: inherit;
-
-    -webkit-text-stroke: 0.5px ${({ theme }) => theme.unchangeableColors.black};
     
     @media (max-width: ${({ theme }) => theme.breakpoints.screenSmall}px) {
         font-size: 32px;
