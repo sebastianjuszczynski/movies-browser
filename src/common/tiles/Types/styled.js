@@ -29,7 +29,7 @@ export const TypeBox = styled.div`
     }
 `;
 export const BigTypeBox = styled(TypeBox)`
-  line-height: 140%;
+  line-height: 1.4;
 
   ${({ clickable }) => clickable && css`
     cursor: pointer;
@@ -45,7 +45,7 @@ export const BigTypeBox = styled(TypeBox)`
   `}
 
   ${({ enabled }) => enabled && css`
-    background: ${({ theme }) => theme.colors.backButton};
+    background: ${({ theme }) => theme.colors.white};
     filter: brightness(160%);
   `}
 
