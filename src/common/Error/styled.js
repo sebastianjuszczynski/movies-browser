@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
 import Header from "../Header/Header";
 
 export const ErrorContainer = styled.div`
@@ -27,13 +26,4 @@ export const Text = styled.p`
   @media (max-width: ${({theme}) => theme.breakpoints.mobile}px) {
     font-size: 14px;
   }
-`;
-export const StyledNavLink = styled(NavLink)`
-  font-weight: 700;
-  font-size: 14px;
-  padding: 16px 24px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: ${({theme}) => theme.unchangeableColors.white};
-  background-color: ${({theme}) => theme.colors.backButton};
 `;
