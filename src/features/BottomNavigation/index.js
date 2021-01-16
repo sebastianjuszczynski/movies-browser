@@ -35,13 +35,13 @@ const BottomNavigation = () => {
           onClick={() => onButtonClick(1)}>
           <StyledArrowLeft />
           <StyledArrowLeft />
-          {"First"}
+          First
         </Button>
         <Button
           disabled={page === 1}
           onClick={() => onButtonClick(page - 1)}>
           <StyledArrowLeft />
-          {"Previous"}
+          Previous
         </Button>
         <PageCounter>
           Page <Number>{page}</Number> of <Number>{numberPages}</Number>
@@ -49,13 +49,13 @@ const BottomNavigation = () => {
         <Button
           disabled={page === numberPages}
           onClick={() => onButtonClick(page + 1)}>
-          {"Next"}
+          Next
           <StyledArrowRight />
         </Button>
         <Button
           disabled={page === numberPages}
           onClick={() => onButtonClick(numberPages)}>
-          {"Last"}
+          Last
           <StyledArrowRight />
           <StyledArrowRight />
         </Button>
