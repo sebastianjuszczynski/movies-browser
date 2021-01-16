@@ -22,9 +22,20 @@ export const MiniImage = styled.img`
     flex: 0 1 auto;
     display: block;
     width: 80px;
-    height: 120px;
+    height: 140px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        height: 100px;
+    }
 `;
 
 export const MiniText = styled.p`
     margin-left: 24px;
+    font-size: 20px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        font-size: 12px;
+        margin: 8px;
+        line-height: 1.2;
+    }
 `;
