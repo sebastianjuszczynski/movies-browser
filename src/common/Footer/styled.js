@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { footerHeight } from "./../../GlobalStyle";
 
 export const Wrapper = styled.footer`
   display: flex;
@@ -7,7 +8,7 @@ export const Wrapper = styled.footer`
   margin-top: auto;
   background: ${({ theme }) => theme.unchangeableColors.black};
   color: ${({ theme }) => theme.unchangeableColors.white};
-  height: 50px;
+  height: ${footerHeight}px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -30,5 +31,5 @@ export const SwitchButton = styled.button`
   width: 20px;
   padding: 0;
   transition: all 0.5s;
-  transform: ${({ isNormalTheme }) => isNormalTheme ? "unset" : "translateX(300%)"};;
+  transform: ${({ isNormalTheme }) => isNormalTheme ? "unset" : "translateX(300%)"};
 `;

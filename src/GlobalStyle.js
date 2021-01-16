@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
+export const footerHeight = 50;
 
 export const GlobalStyle = createGlobalStyle`
     html {
@@ -14,10 +15,10 @@ export const GlobalStyle = createGlobalStyle`
         font-family: "Poppins", sans-serif;
     };
     main {
-        padding-bottom: 100px;
+        padding-bottom: ${footerHeight + 25}px;
     };
     #root {
         min-height: 100vh;
         position: relative;
-    }
+    };
 `;
