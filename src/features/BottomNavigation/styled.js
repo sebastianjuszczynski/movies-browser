@@ -4,7 +4,7 @@ import { ReactComponent as rightArrow } from "../../assets/rightArrow.svg";
 
 export const DesktopContainer = styled.div`
     width: fit-content;
-    margin: 40px auto 100px;
+    margin: 40px auto 0;
     
     @media  (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px)  {
     display: none;
@@ -18,7 +18,7 @@ export const MobileContainer = styled(DesktopContainer)`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 32px auto 60px;
+    margin: 32px auto 0;
   }
 `;
 export const Button = styled.button`
