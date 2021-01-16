@@ -3,7 +3,7 @@ import { Image } from "./../tilesStyles";
 
 export const BigPersonImage = styled(Image)`
   float: left;
-  object-fit: contain;
+  object-fit: cover;
   height: 564px;
   margin-right: 40px;
   
