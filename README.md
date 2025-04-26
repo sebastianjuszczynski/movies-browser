@@ -11,13 +11,17 @@ The project contains an `.nvmrc` file to easily set the proper Node.js version u
 
 If you don't have `nvm` installed, please manually install Node.js in version **16.x** from the [official Node.js releases page](https://nodejs.org/en/download/releases/).
 
+Note for Windows users:
+If you are using nvm-windows, you need to manually run:
+
+nvm use 16
+
+because automatic .nvmrc reading is not supported by nvm-windows.
+
 ## Local Setup Instructions
 
-### 1. Clone the repository
+### Clone the repository
 git clone https://github.com/sebastianjuszczynski/movies-browser.git
-
-## Install dependencies
-npm install --legacy-peer-deps
 
 Note:
 
@@ -25,9 +29,15 @@ Note:
 
 -If you don't have nvm, make sure you manually install Node.js v16.x.
 
+## Set Node.js version (important for Windows users!)
+nvm use 16
+
+## Install dependencies
+npm install --legacy-peer-deps
+
+
 ## Start the development server
 npm start
-
 
 Important Notes:
 - Some project dependencies are deprecated but they do not affect the application functionality.
