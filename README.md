@@ -1,6 +1,41 @@
 # Movie Browser
 
 [Live demo] https://sebastianjuszczynski.github.io/movies-browser/
+
+## Requirements
+
+- Node.js **v16.x** (recommended, e.g., 16.20.2)
+- npm **v6.x** or newer
+
+The project contains an `.nvmrc` file to easily set the proper Node.js version using `nvm`.
+
+If you don't have `nvm` installed, please manually install Node.js in version **16.x** from the [official Node.js releases page](https://nodejs.org/en/download/releases/).
+
+## Local Setup Instructions
+
+### 1. Clone the repository
+git clone https://github.com/sebastianjuszczynski/movies-browser.git
+
+## Install dependencies
+npm install --legacy-peer-deps
+
+Note:
+
+-If you are using nvm, after cloning the project you can run nvm use to automatically switch to Node.js v16.
+
+-If you don't have nvm, make sure you manually install Node.js v16.x.
+
+## Start the development server
+npm start
+
+
+Important Notes:
+- Some project dependencies are deprecated but they do not affect the application functionality.
+
+- Using Node.js v16.x is strongly recommended for smooth setup.
+
+- If you encounter issues, ensure you have the correct Node.js version.
+
 ## Tech Stack
 
 - React
