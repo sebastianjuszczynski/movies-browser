@@ -25,7 +25,7 @@ const commonSlice = createSlice({
     },
     setTheme: (state, { payload }) => {
       state.isNormalTheme = payload;
-      localStorage.setItem("theme", JSON.stringify(payload));
+      localStorage.setItem("moviesBrowsertheme", JSON.stringify(payload));
     },
     switchGenreEnabled: ({ genresList }, { payload: id }) => {
       const index = genresList.findIndex((genre) => genre.id === id);
