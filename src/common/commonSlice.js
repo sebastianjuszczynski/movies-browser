@@ -5,8 +5,8 @@ const commonSlice = createSlice({
   initialState: {
     genresList: [],
     loading: true,
-    isNormalTheme: localStorage.getItem("theme")
-      ? JSON.parse(localStorage.getItem("theme"))
+    isNormalTheme: localStorage.getItem("moviesBrowsertheme")
+      ? JSON.parse(localStorage.getItem("moviesBrowsertheme"))
       : true,
   },
   reducers: {
